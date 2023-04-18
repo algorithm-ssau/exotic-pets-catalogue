@@ -1,9 +1,10 @@
 import React from 'react';
+import Header from './common/el/header';
 
 function App() {
   return (
     <div>
-      hello
+      <Header />
     </div>
   );
 }
