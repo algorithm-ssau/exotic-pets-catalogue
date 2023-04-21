@@ -1,0 +1,39 @@
+a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+a:hover {
+    color: var(--gray);
+}
+
+.search-container input {
+    padding: .9375rem 2.8125rem;
+    width: 17.5rem;
+
+    border: none;
+    border-radius: var(--border-radius);
+
+    background: url("../../assets/search-icon.svg") no-repeat center left var(--white);
+    background-position: .9375rem;
+}
+
+
+.Header {
+    padding: 5px 0px;
+
+    background-color: var(--brown);
+}
+
+.Header,
+.pages-navigation,
+.catalogue-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img {
+    width: 80px;
+    height: 80px;
+}

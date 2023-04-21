@@ -14,16 +14,18 @@ const Header = () => {
 
             <div className="pages-navigation">
                 <div className="home-link">
-                    <a href="/home">Главная</a>
+                    <a href="/home">главная</a>
                 </div>
 
                 <div className="catalogue-link">
-                    <a href="/catalogue">Каталог</a>
+                    <a href="/catalogue">каталог</a>
                 </div>
             </div>
 
             <div className="catalogue-navigation">
-                <input type="text" placeholder="Введите запрос"/>
+                <div className="search-container">
+                    <input type="text" placeholder="Введите запрос"/>
+                </div>
 
                 <div className="heart-icon-container">
                     <a href="/favorites">
