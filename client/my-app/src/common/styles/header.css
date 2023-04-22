@@ -19,6 +19,11 @@ a:hover {
     background-position: .9375rem;
 }
 
+.header-wrapper {
+    width: 1110px;
+    margin: 0 auto;
+}
+
 
 .Header {
     padding: 5px 0px;
@@ -26,11 +31,28 @@ a:hover {
     background-color: var(--brown);
 }
 
-.Header,
+.header-wrapper,
 .pages-navigation,
 .catalogue-navigation {
     display: flex;
     align-items: center;
+}
+
+.pages-navigation {
+    margin-left: 5rem;
+}
+
+.pages-navigation .catalogue-link{
+    margin-left: 2.5rem;
+}
+
+.catalogue-navigation {
+    margin-left: auto;
+    gap: 40px;
+}
+
+.logo-container {
+    justify-self: flex-start;
 }
 
 .logo-container img {
