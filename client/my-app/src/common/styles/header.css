@@ -4,6 +4,10 @@ a {
     font-size: 1.5em;
 }
 
+.active {
+    color: var(--gray);
+}
+
 a:hover {
     color: var(--gray);
 }
@@ -42,7 +46,7 @@ a:hover {
     margin-left: 5rem;
 }
 
-.pages-navigation .catalogue-link{
+.pages-navigation .catalogue-link {
     margin-left: 2.5rem;
 }
 
