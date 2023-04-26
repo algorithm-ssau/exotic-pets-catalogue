@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './common/el/header';
+import Footer from './common/el/footer';
 import PageHome from './pages/homepage/view/page_home';
 import PageCatalogue from './pages/catalogue_page/view/page_catalogue';
 import PageFavorites from './pages/favorites_page/view/page_favorites';
@@ -19,6 +20,8 @@ function App() {
         <Route path="/favorites" element={<PageFavorites />} />
         <Route path="/cart" element={<PageCart />} />
       </Routes>
+
+      <Footer />
     </>
   );
 }
