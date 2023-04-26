@@ -8,32 +8,32 @@ const Footer = () => {
     return (
         <div className="Footer">
             <div className="footer-wrapper">
-                <div className="logo-container">
-                    <NavLink to="/">
-                        <img src={require("../../assets/logo.png")} alt="logo" />
-                    </NavLink>
-                </div>
-
                 <div className="address-info-container">
-                    Ул. Горького, дом 17
-                    <br></br>
-                    +7 987 654 32-10
-                    <br></br>
-                    exotic-pets@exoticpets.com
-                </div>
+                    <div className="logo-container">
+                        <NavLink to="/">
+                            <img src={require("../../assets/logo.png")} alt="logo" />
+                        </NavLink>
+                    </div>
 
-                <div className="social-media-container">
-                    <Link to="https://vk.com/">
-                        <img src={require("../../assets/vk-icon.png")} alt="VK" />
-                    </Link>
+                    <div className="address-info">
+                        <span className="info address">Ул. Горького, дом 17</span>
+                        <span className="info phone-number">+7 987 654 32-10</span>
+                        <span className="info email">exotic-pets@exoticpets.com</span>
+                    </div>
 
-                    <Link to="https://web.telegram.org/">
-                        <img src={require("../../assets/telegram-icon.png")} alt="VK" />
-                    </Link>
+                    <div className="social-media-container">
+                        <Link to="https://vk.com/">
+                            <img src={require("../../assets/vk-icon.png")} alt="VK" />
+                        </Link>
 
-                    <Link to="https://www.youtube.com/" target="_blank">
-                        <img src={require("../../assets/youtube-icon.png")} alt="youtube" />
-                    </Link>
+                        <Link to="https://web.telegram.org/">
+                            <img src={require("../../assets/telegram-icon.png")} alt="VK" />
+                        </Link>
+
+                        <Link to="https://www.youtube.com/" target="_blank">
+                            <img src={require("../../assets/youtube-icon.png")} alt="youtube" />
+                        </Link>
+                    </div>
                 </div>
 
                 <div className="footer-navigation-container">

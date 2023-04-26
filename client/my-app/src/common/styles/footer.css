@@ -1,0 +1,51 @@
+.Footer {
+    background-color: var(--brown);
+}
+
+.Footer a {
+    font-size: 1em;
+}
+
+.footer-wrapper {
+    width: 1110px;
+    margin: 0 auto;
+    padding: 1.5625rem 0rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.address-info {
+    margin-top: 0.625rem;
+
+    color: var(--white);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.address-info .phone-number,
+.address-info .email {
+    margin-top: 0.3125rem;
+}
+
+.social-media-container {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 0.9375rem;
+}
+
+.footer-navigation-heading {
+    font-size: 1.5em;
+    color: var(--white);
+}
+
+.link {
+    margin-top: 0.625rem;
+}
+
+.newsletter-input {
+    margin-top: 2.1875rem;
+}
