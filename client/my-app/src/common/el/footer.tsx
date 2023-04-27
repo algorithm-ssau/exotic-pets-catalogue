@@ -59,13 +59,13 @@ const Footer = () => {
                 <div className="newsletter-container">
                     <span className="footer-navigation-heading">Рассылка новостей</span>
 
-                    <div className="newsletter-input">
+                    <form className="newsletter-input">
                         <input type="text" placeholder="E-mail"/>
 
                         <button className="newsletter-input-button">
                             <ArrowSvg />
                         </button>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
