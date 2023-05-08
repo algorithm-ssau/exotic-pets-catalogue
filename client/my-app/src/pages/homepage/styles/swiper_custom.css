@@ -21,3 +21,21 @@
 .swiper-slide img {
     border-radius: var(--border-radius);
 }
+
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+    left: 0;
+    right: auto;
+}
+
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: 0;
+    left: auto;
+}
+
+.swiper-button-next::after {
+    content: url(../../../assets/polygon-icon-right.svg);
+}
+
+.swiper-button-prev::after {
+    content: url(../../../assets/polygon-icon-left.svg);
+}
