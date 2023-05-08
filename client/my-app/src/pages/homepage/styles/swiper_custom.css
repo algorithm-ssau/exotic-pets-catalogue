@@ -5,3 +5,19 @@
     align-items: center;
     justify-content:center;
 }
+
+.swiper-pagination-bullet{
+    width: 25px;
+    height: 25px;
+    margin-left: 20px!important;
+    margin-right: 0px!important;
+    margin-bottom: 10px!important;
+
+    background:url(../../../assets/pagination-bullet.svg);
+    background-size: cover;
+    border-radius: initial;
+}
+
+.swiper-slide img {
+    border-radius: var(--border-radius);
+}
