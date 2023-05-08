@@ -16,20 +16,20 @@ const Slider = () => {
                 pagination={{clickable: true}}
                 loop={true}
                 autoplay={{
-                    delay: 2500,
+                    delay: 3500,
                     disableOnInteraction: false,
                 }}
             >
                 <SwiperSlide>
-                    <img src={require("../../../temp/image 30.png")} alt="" width={1110}/>
+                    <img src={require("../../../assets/slider-image-1.png")} alt="" width={1110}/>
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <img src={require("../../../temp/image 31.png")} alt="" width={1110}/>
+                    <img src={require("../../../assets/slider-image-2.png")} alt="" width={1110}/>
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <img src={require("../../../temp/image 32.png")} alt="" width={1110}/>
+                    <img src={require("../../../assets/slider-image-3.png")} alt="" width={1110}/>
                 </SwiperSlide>
             </Swiper>
         </div>
