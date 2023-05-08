@@ -1,0 +1,41 @@
+/* ----- Swiper.js custom styles  ----- */
+
+.swiper-slide {
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.swiper-pagination-bullet{
+    width: 25px;
+    height: 25px;
+    margin-left: 20px!important;
+    margin-right: 0px!important;
+    margin-bottom: 10px!important;
+
+    background:url(../../../assets/pagination-bullet.svg);
+    background-size: cover;
+    border-radius: initial;
+}
+
+.swiper-slide img {
+    border-radius: var(--border-radius);
+}
+
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+    left: 0;
+    right: auto;
+}
+
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: 0;
+    left: auto;
+}
+
+.swiper-button-next::after {
+    content: url(../../../assets/polygon-icon-right.svg);
+}
+
+.swiper-button-prev::after {
+    content: url(../../../assets/polygon-icon-left.svg);
+}
