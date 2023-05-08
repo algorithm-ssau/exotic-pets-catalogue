@@ -1,0 +1,7 @@
+/* ----- Swiper.js custom styles  ----- */
+
+.swiper-slide {
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
