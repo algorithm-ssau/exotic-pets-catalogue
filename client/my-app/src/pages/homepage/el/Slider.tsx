@@ -1,6 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper';
+import { Autoplay, Navigation, Pagination } from 'swiper';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -10,10 +10,15 @@ const Slider = () => {
     return (
         <div className="slider-container">
             <Swiper
-                modules={[Navigation, Pagination]}
+                modules={[Autoplay, Navigation, Pagination]}
                 slidesPerView={1}
                 navigation
                 pagination={{clickable: true}}
+                loop={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
             >
                 <SwiperSlide>
                     <img src={require("../../../temp/image 30.png")} alt="" width={1110}/>
