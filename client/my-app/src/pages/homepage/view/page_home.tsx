@@ -1,8 +1,11 @@
 import React from 'react';
+import Slider from '../el/Slider';
 
 const PageHome = () => {
     return (
-        <h1>Home</h1>
+        <div className="homepage-container">
+            <Slider />
+        </div>
     );
 }
 
