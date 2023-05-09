@@ -7,6 +7,12 @@ const PageHome = () => {
     return (
         <div className="homepage-container">
             <Slider />
+
+            <div className="company-intro-container">
+                <span className="company-intro">
+                    Exotic Pets - крупнейший магазин экзотических питомцев
+                </span>
+            </div>
         </div>
     );
 }

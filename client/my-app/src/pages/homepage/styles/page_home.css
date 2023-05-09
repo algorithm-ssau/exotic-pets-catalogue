@@ -3,3 +3,20 @@
     margin: 0 auto;
     margin-top: 5rem;
 }
+
+.company-intro-container {
+    height: 168px;
+
+    margin: 0 auto;
+    margin-top: 5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--white);
+}
+
+.company-intro {
+    font-size: 2em;
+}
