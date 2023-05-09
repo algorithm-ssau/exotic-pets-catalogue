@@ -1,0 +1,16 @@
+.catalogue-button {
+    padding: .5rem 1.875rem ;
+
+    color: var(--white);
+
+    background-color: var(--green);
+
+    border: none;
+    border-radius: var(--border-radius);
+
+    cursor: pointer;
+}
+
+.catalogue-button:hover {
+    background-color: var(--dark-green);
+}
