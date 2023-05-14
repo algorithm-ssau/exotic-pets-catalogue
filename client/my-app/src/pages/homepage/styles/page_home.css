@@ -1,6 +1,7 @@
-.slider-container, 
-.company-intro-container, 
-.species-info-container {
+.slider-container,
+.company-intro-container,
+.species-info-container,
+.advantages-section-container {
     margin: 0 auto;
     margin-top: 5rem;
 }
@@ -31,7 +32,7 @@
     grid: 1fr 1fr / 1fr 1fr 1fr 1fr;
     grid-auto-flow: column;
 
-    list-style-type:none;
+    list-style-type: none;
 }
 
 .species-info-header {
@@ -80,4 +81,35 @@
 
 .species-info-container li:nth-child(3) {
     grid-row-start: 2;
+}
+
+.advantages-section-container {
+    height: 345px;
+
+    display: flex;
+    justify-content: center;
+
+    background-color: var(--white);
+}
+
+.advantages-wrapper {
+    width: 1110px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.advantages-container {
+    margin-top: 60px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-content: space-around;
+}
+
+.our-advantages {
+    font-size: 3em;
+    text-align: center;
 }

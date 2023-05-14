@@ -4,6 +4,7 @@ import React from 'react';
 import Slider from '../el/Slider';
 import Button from '../el/Button';
 import SpeciesCard from '../el/SpeciesCard';
+import Advantage from '../el/Advantage';
 
 // data / interfaces / temporary files
 import speciesData from '../el/SpeciesCard/data';
@@ -33,13 +34,13 @@ const PageHome = () => {
                         Найдите питомца по душе
                     </p>
 
-                    <Button 
+                    <Button
                         className={"catalogue-button"}
                         isLink={true}
                         act={"Каталог"}
                     />
                 </div>
-                
+
                 {speciesData.map(specie => {
                     return (
                         <li key={specie.id}>
@@ -50,6 +51,31 @@ const PageHome = () => {
                         </li>
                     );
                 })}
+            </div>
+
+            <div className="advantages-section-container">
+                <div className="advantages-wrapper">
+                    <h2>
+                        <div className="our-advantages">Наши преимущества</div>
+                    </h2>
+
+                    <div className="advantages-container">
+                        <Advantage
+                            number={1}
+                            advantage="Команда опытных специалистов с многолетним опытом"
+                        />
+
+                        <Advantage
+                            number={2}
+                            advantage="Тщательный уход за животными, не попавшими в добрые руки"
+                        />
+
+                        <Advantage
+                            number={3}
+                            advantage="Обратная связь с нашими покупателями"
+                        />
+                    </div>
+                </div>
             </div>
         </div>
     );
