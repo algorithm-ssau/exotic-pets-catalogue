@@ -9,9 +9,10 @@ interface IAdvantage {
 const Advantage = ({ number, advantage }: IAdvantage) => {
     return (
         <div className="advantage">
-            <span className="advantage-number">{number}</span>
-            <span className="advantage-text"> {advantage}</span>
+            <div className="advantage-number">{number}</div>
+            <div className="advantage-text"> {advantage}</div>
         </div>
+
     );
 }
 

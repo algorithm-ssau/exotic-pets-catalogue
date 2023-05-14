@@ -52,10 +52,11 @@ const PageHome = () => {
                     );
                 })}
             </div>
+
             <div className="advantages-section-container">
                 <div className="advantages-wrapper">
                     <h2>
-                        <span className="our-advantages">Наши преимущества</span>
+                        <div className="our-advantages">Наши преимущества</div>
                     </h2>
 
                     <div className="advantages-container">

@@ -85,9 +85,10 @@
 
 .advantages-section-container {
     height: 345px;
-    margin-top: 80px;
+
     display: flex;
     justify-content: center;
+
     background-color: var(--white);
 }
 
@@ -101,8 +102,11 @@
 }
 
 .advantages-container {
-    display: flex;
+    margin-top: 60px;
 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-content: space-around;
 }
 
 .our-advantages {

@@ -1,29 +1,23 @@
 .advantage-number {
-    font-size: 8em;
+    font-size: 9em;
     color: var(--green);
     font-weight: 600;
-    filter: opacity(0.5);
-
-    visibility: hidden;
+    filter: opacity(0.4);
 
     position: absolute;
 
-    left: 0;
-    right: 0;
-    top: 0;
-
-    z-index: var(--ui-index-1);
+    top: -80px;
 }
 
 .advantage-text {
     font-size: 1.25em;
     font-weight: 600;
 
-    position: relative;
-
-    z-index: var(--ui-index-2);
+    text-align: center;
 }
 
 .advantage {
     position: relative;
+    display: flex;
+    justify-content: center;
 }
