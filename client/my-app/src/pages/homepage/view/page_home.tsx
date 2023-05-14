@@ -33,13 +33,13 @@ const PageHome = () => {
                         Найдите питомца по душе
                     </p>
 
-                    <Button 
+                    <Button
                         className={"catalogue-button"}
                         isLink={true}
                         act={"Каталог"}
                     />
                 </div>
-                
+
                 {speciesData.map(specie => {
                     return (
                         <li key={specie.id}>
@@ -50,6 +50,13 @@ const PageHome = () => {
                         </li>
                     );
                 })}
+            </div>
+            <div className="advantages-container">
+                <div className="advantages-wrapper">
+                    <h2>
+                        <span className='our-advantages'>Наши преимущества</span>
+                    </h2>
+                </div>
             </div>
         </div>
     );
