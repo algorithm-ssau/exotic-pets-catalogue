@@ -1,0 +1,60 @@
+.species-card-container {
+    width: 255px;
+    height: 255px;
+
+    position: relative;
+}
+
+.species-name-popup {
+    left: 0; 
+    right: 0; 
+    bottom: 10px;
+    
+    font-size: 1.5em;
+    text-align: center;
+    color: var(--white);
+
+    position: absolute;
+    z-index: var(--ui-index-1);
+
+    visibility: hidden;
+}
+
+.species-card-container,
+.species-card-container img {
+    border-radius: var(--border-radius);
+    
+}
+
+.species-card-container img{
+    transition: opacity .5s, .5s;
+}
+
+.species-card-container:hover img{
+    filter: brightness(0.5) drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.25));
+}
+
+.species-card-container:hover > .species-name-popup{
+    visibility: visible;
+    animation: fade-in .5s forwards;
+}
+
+/* for species name animation */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
