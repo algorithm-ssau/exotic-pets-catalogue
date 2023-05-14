@@ -13,8 +13,8 @@ const Button = ({className, isLink, act}: IButton) => {
         <div className="button-container">
             {
                 isLink 
-                ? <button className={className}><Link to="/catalogue">{act}</Link></button> 
-                : <button className={className}>{act}</button>
+                ? <Link to="/catalogue"> <button className={className}> {act} </button> </Link>
+                : <button className={className}> {act} </button>
             }
         </div>       
     );
