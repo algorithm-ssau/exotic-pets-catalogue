@@ -1,7 +1,7 @@
 .slider-container,
 .company-intro-container,
 .species-info-container,
-.advantages-container {
+.advantages-section-container {
     margin: 0 auto;
     margin-top: 5rem;
 }
@@ -83,21 +83,29 @@
     grid-row-start: 2;
 }
 
-.advantages-container {
+.advantages-section-container {
     height: 345px;
-
+    margin-top: 80px;
     display: flex;
-    /* align-items: center; */
     justify-content: center;
-
     background-color: var(--white);
 }
 
 .advantages-wrapper {
-    margin-top: 80px;
     width: 1110px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.advantages-container {
+    display: flex;
+
 }
 
 .our-advantages {
     font-size: 3em;
+    text-align: center;
 }
