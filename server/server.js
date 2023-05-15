@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 
     const id = req.params.id; // Extract id from request parameter
 
-    knex.select('name', 'description', 'images_id').from('animals').where('id', 15).then((data) => {
+    knex.select('name', 'description', 'images_id').from('animals').where('id', id).then((data) => {
       const imageId = data[0].images_id; // Extract image_id from data
 
       // Query the second table to get the image attribute data using image_id
