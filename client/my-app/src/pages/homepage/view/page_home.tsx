@@ -79,11 +79,9 @@ const PageHome = () => {
                 </div>
             </div>
 
-            <div className="feedback-section-container">
-                <div className="feedback-container">
-                    <Feedback
-                    />
-                </div>
+            <div className="feedback-container">
+                <Feedback
+                />
             </div>
         </div>
     );

@@ -2,7 +2,7 @@
 .company-intro-container,
 .species-info-container,
 .advantages-section-container,
-.feedback-section-container {
+.feedback-container {
     margin: 0 auto;
     margin-top: 5rem;
 }
@@ -115,12 +115,13 @@
     text-align: center;
 }
 
-.feedback-section-container {
-    height: 240px;
-    display: flex;
-    justify-content: center;
-}
-
 .feedback-container {
     width: 1110px;
+
+    border-radius: var(--border-radius);
+
+    background-color: var(--brown);
+
+    display: flex;
+    justify-content: center;
 }
