@@ -5,6 +5,7 @@ import Slider from '../el/Slider';
 import Button from '../el/Button';
 import SpeciesCard from '../el/SpeciesCard';
 import Advantage from '../el/Advantage';
+import Feedback from '../el/Feedback';
 
 // data / interfaces / temporary files
 import speciesData from '../el/SpeciesCard/data';
@@ -75,6 +76,13 @@ const PageHome = () => {
                             advantage="Обратная связь с нашими покупателями"
                         />
                     </div>
+                </div>
+            </div>
+
+            <div className="feedback-section-container">
+                <div className="feedback-container">
+                    <Feedback
+                    />
                 </div>
             </div>
         </div>
