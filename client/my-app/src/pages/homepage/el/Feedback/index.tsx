@@ -1,26 +1,29 @@
 import * as React from 'react';
 import Button from "../Button"
 
-interface IFeedback {
-    feedback: string;
-    name: string;
-}
+import './index.css';
 
-const Feedback = ({ feedback, name }: IFeedback) => {
+const Feedback = () => {
     return (
         <div className="feedback">
+
             <div className="left-feedback">
-                <span id='header-feedback'>Оставьте отзыв</span>
-                <span id='paragraph-feedback'>Нам очень важно ваше мнение о нашем сервисе</span>
+                <h2 className="header-feedback">Оставьте отзыв</h2>
+                <span className="paragraph-feedback">Нам очень важно ваше мнение о нашем сервисе</span>
             </div>
+
             <div className="right-feedback">
-                <div className="feedback-text">{feedback}</div>
-                <div className="feedback-name">{name}</div>
-                <Button
-                    className={"feedback-button"}
-                    isLink={false}
-                    act={"Отправить"}
-                />
+                <div className="right-feedback-up">
+                    <textarea className="feedback-input" name="text" placeholder="Ваш отзыв" />
+                </div>
+                <div className="right-feedback-down">
+                    <input className="feedback-name" type="text" placeholder="Ваше имя" />
+                    <Button
+                        className={"feedback-button"}
+                        isLink={false}
+                        act={"Отправить"}
+                    />
+                </div>
             </div>
         </div>
     );
