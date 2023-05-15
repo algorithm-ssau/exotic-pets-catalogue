@@ -2,7 +2,8 @@
 .company-intro-container,
 .species-info-container,
 .advantages-section-container,
-.feedback-container {
+.feedback-container, 
+.review-container {
     margin: 0 auto;
     margin-top: 5rem;
 }
@@ -121,6 +122,14 @@
     border-radius: var(--border-radius);
 
     background-color: var(--brown);
+
+    display: flex;
+    justify-content: center;
+}
+
+.review-container {
+    width: 1111px;
+    height: 314px;
 
     display: flex;
     justify-content: center;
