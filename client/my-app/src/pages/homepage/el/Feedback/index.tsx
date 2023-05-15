@@ -16,6 +16,11 @@ const Feedback = () => {
         setFeedback(e.target.value);
     }
 
+    function handleSendFeedback() {
+        console.log(username);
+        console.log(feedback);
+    }
+
     return (
         <div className="feedback">
             <div className="left-feedback">
@@ -46,6 +51,7 @@ const Feedback = () => {
                         className={"feedback-button"}
                         isLink={false}
                         act={"Отправить"}
+                        onClick={handleSendFeedback}
                     />
                 </div>
             </div>
