@@ -1,7 +1,8 @@
 .slider-container,
 .company-intro-container,
 .species-info-container,
-.advantages-section-container {
+.advantages-section-container,
+.feedback-container {
     margin: 0 auto;
     margin-top: 5rem;
 }
@@ -112,4 +113,15 @@
 .our-advantages {
     font-size: 3em;
     text-align: center;
+}
+
+.feedback-container {
+    width: 1110px;
+
+    border-radius: var(--border-radius);
+
+    background-color: var(--brown);
+
+    display: flex;
+    justify-content: center;
 }
