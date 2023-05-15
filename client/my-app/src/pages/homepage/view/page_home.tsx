@@ -6,6 +6,7 @@ import Button from '../el/Button';
 import SpeciesCard from '../el/SpeciesCard';
 import Advantage from '../el/Advantage';
 import Feedback from '../el/Feedback';
+import Review from '../el/Review';
 
 // data / interfaces / temporary files
 import speciesData from '../el/SpeciesCard/data';
@@ -81,6 +82,11 @@ const PageHome = () => {
 
             <div className="feedback-container">
                 <Feedback
+                />
+            </div>
+
+            <div className="review-container">
+                <Review
                 />
             </div>
         </div>
