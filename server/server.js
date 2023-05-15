@@ -5,7 +5,7 @@ const config = require('.\\config.json');
 const knex = require('knex')(config);
 
 // GET route for retrieving data from a table for a specific id and returning HTML code
-app.get('/', (req, res) => {
+app.get('/:id', (req, res) => {
 
     const id = req.params.id; // Extract id from request parameter
 
