@@ -1,0 +1,35 @@
+.user-review {
+    width: 316px;
+    height: 314px;
+    padding: 20px;
+
+    background-color: var(--white);
+
+    border-radius: var(--border-radius);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userimage-review {
+    width: 124px;
+    height: 124px;
+
+    border-radius: 500px;
+}
+
+.username-review {
+    margin-top: 10px;
+    
+    font-size: 1em;
+    text-align: center;
+}
+
+.usertext-review {
+    margin-top: 20px;
+
+    font-size: 1.25em;
+    text-align: center;
+    font-weight: 600;
+}

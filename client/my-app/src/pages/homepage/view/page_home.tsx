@@ -6,6 +6,7 @@ import Button from '../el/Button';
 import SpeciesCard from '../el/SpeciesCard';
 import Advantage from '../el/Advantage';
 import Feedback from '../el/Feedback';
+import ReviewCard from '../el/ReviewCard';
 
 // data / interfaces / temporary files
 import speciesData from '../el/SpeciesCard/data';
@@ -81,6 +82,14 @@ const PageHome = () => {
 
             <div className="feedback-container">
                 <Feedback
+                />
+            </div>
+
+            <div className="review-container">
+                <ReviewCard
+                    image={""}
+                    name="Легушка"
+                    review="Отличный сервис. Крутой очень. Лорем ипсум даже я бы сказал"
                 />
             </div>
         </div>
