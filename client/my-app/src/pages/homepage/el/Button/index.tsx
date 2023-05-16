@@ -6,15 +6,16 @@ interface IButton {
     className: string;
     isLink?: boolean;
     act: string;
+    onClick?: () => void;
 }
 
-const Button = ({className, isLink, act}: IButton) => {
+const Button = ({className, isLink, act, onClick}: IButton) => {
     return (
         <div className="button-container">
             {
                 isLink 
                 ? <Link to="/catalogue"> <button className={className}> {act} </button> </Link>
-                : <button className={className}> {act} </button>
+                : <button className={className} onClick={onClick}> {act} </button>
             }
         </div>       
     );
