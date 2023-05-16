@@ -1,11 +1,6 @@
 import * as React from 'react';
 import './index.css';
-
-interface IReview {
-    image: string;
-    name: string;
-    review: string;
-}
+import IReview from '../../../../common/interfaces/IReview';
 
 const ReviewCard = ({image, name, review}: IReview) => {
     return (

@@ -1,10 +1,6 @@
 import * as React from 'react';
 import './index.css';
-
-interface IAdvantage {
-    number: number;
-    advantage: string;
-}
+import IAdvantage from '../../../../common/interfaces/IAdvantage';
 
 const Advantage = ({ number, advantage }: IAdvantage) => {
     return (
