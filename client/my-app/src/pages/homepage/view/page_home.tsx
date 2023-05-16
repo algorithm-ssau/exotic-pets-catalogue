@@ -87,6 +87,9 @@ const PageHome = () => {
 
             <div className="review-container">
                 <ReviewCard
+                    image={""}
+                    name="Легушка"
+                    review="Отличный сервис. Крутой очень. Лорем ипсум даже я бы сказал"
                 />
             </div>
         </div>
