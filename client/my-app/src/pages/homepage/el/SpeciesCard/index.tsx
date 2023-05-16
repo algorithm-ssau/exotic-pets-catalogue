@@ -1,11 +1,6 @@
 import * as React from 'react';
 import "./index.css"
-
-interface ISpecies {
-    id?: number;
-    species: string;
-    image: string; // contains url to the image
-}
+import ISpecies from '../../../../common/interfaces/ISpecies';
 
 const SpeciesCard = ({species, image}: ISpecies) => {
     return (
