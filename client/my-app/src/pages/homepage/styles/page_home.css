@@ -128,9 +128,7 @@
 }
 
 .review-container {
-    width: 1111px;
-    height: 314px;
+    width: 1110px;
 
-    display: flex;
-    justify-content: center;
+    margin-bottom: 80px;
 }
