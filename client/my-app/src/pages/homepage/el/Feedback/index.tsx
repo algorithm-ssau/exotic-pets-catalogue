@@ -19,6 +19,21 @@ const Feedback = () => {
     function handleSendFeedback() {
         console.log(username);
         console.log(feedback);
+
+        fetch('http://25.13.222.253:3000/addData', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                attribute1: username,
+                attribute2: feedback
+            })
+        }).then((response) => {
+            console.log(response);
+        }).catch((error) => {
+            console.error(error);
+        });
     }
 
     return (
@@ -31,20 +46,20 @@ const Feedback = () => {
 
             <div className="right-feedback">
                 <div className="right-feedback-up">
-                    <textarea 
-                        className="feedback-input" 
-                        name="text" 
+                    <textarea
+                        className="feedback-input"
+                        name="text"
                         placeholder="Ваш отзыв"
-                        onChange={e => {handlerSetFeedback(e)}}
+                        onChange={e => { handlerSetFeedback(e) }}
                     />
                 </div>
 
                 <div className="right-feedback-down">
-                    <input 
-                        className="feedback-name" 
-                        type="text" 
-                        placeholder="Ваше имя" 
-                        onChange={e => {handlerSetUsername(e)}}
+                    <input
+                        className="feedback-name"
+                        type="text"
+                        placeholder="Ваше имя"
+                        onChange={e => { handlerSetUsername(e) }}
                     />
 
                     <Button
