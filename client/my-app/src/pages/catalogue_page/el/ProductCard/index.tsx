@@ -7,7 +7,7 @@ import IProduct from '../../../../common/interfaces/IProduct';
 
 import "./index.css";
 
-const ProductCard = ({id, name, price, isFavourite = false, isInCart = false}: IProduct) => {
+const ProductCard = ({id, image, name, price, isFavourite = false, isInCart = false}: IProduct) => {
     const [isFav, setIsFav] = useState<boolean>(isFavourite);
 
     function handleSetIsFav() {
@@ -19,7 +19,7 @@ const ProductCard = ({id, name, price, isFavourite = false, isInCart = false}: I
     }
 
     return (
-        <div className="product-card-container" style={{backgroundImage: `url(${"https://i.pinimg.com/originals/23/d3/63/23d363aa71b1e9b8498fa49b2f357e6d.jpg"}`}}>
+        <div className="product-card-container" style={{backgroundImage: `url(${image}`}} key={id}>
             <div 
                 className="product-card-favourite"
                 onClick={handleSetIsFav}
@@ -29,12 +29,12 @@ const ProductCard = ({id, name, price, isFavourite = false, isInCart = false}: I
 
             <div className="product-card-info">
                 <div className="product-card-name">
-                    Эублефар крутейший
+                    {name}
                 </div>
 
                 <div className="product-card-info-left">
                     <div className="product-card-price">
-                        250000 ₽
+                        {price}
                     </div>
 
                     <button className="product-card-button">
