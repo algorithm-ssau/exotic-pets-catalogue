@@ -10,11 +10,21 @@ import "./index.css";
 const ProductCard = ({id, image, name, price, isFavourite = false, isInCart = false}: IProduct) => {
     const [isFav, setIsFav] = useState<boolean>(isFavourite);
 
+    const [isCart, setIsCart] = useState<boolean>(isInCart);
+
     function handleSetIsFav() {
         if (isFav === false) {
             setIsFav(true);
         } else {
             setIsFav(false);
+        }
+    }
+
+    function handleSetIsCart() {
+        if (isCart === false) {
+            setIsCart(true);
+        } else {
+            setIsCart(false);
         }
     }
 
@@ -37,7 +47,10 @@ const ProductCard = ({id, image, name, price, isFavourite = false, isInCart = fa
                         {price}
                     </div>
 
-                    <button className="product-card-button">
+                    <button 
+                        className="product-card-button"
+                        onClick={handleSetIsCart}
+                    >
                         <CartSvg 
                             width={15} 
                             height={15}
