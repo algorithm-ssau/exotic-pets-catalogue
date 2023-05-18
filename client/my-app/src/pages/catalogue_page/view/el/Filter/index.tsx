@@ -6,7 +6,7 @@ import Filter from './Filter';
 
 const CatalogueFilter = () => {
     return (
-        <div className='catalogue-filter'>
+        <div className='catalogue-filter-container'>
 
                 <Filter></Filter>
 

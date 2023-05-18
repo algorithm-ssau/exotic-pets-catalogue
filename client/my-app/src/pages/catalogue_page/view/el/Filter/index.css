@@ -1,13 +1,9 @@
-.catalogue-filter {
+.catalogue-filter-container {
     width: 1110px;
     height: 60px;
-
-    /* position: sticky;
-    top: 0; */
+    padding: 15px;
 
     background-color: var(--white);
-
-    padding: 15px;
 
     border-radius: 0 0 var(--border-radius) var(--border-radius);
 
@@ -27,8 +23,6 @@
 
     background-color: var(--white);
 
-
-
     border: 1px solid var(--black);
 
     background: url("../../../../../assets/search-icon.svg") no-repeat center left var(--white);
@@ -36,19 +30,19 @@
 }
 
 .filter-list {
-
     border: none;
 
     background-color: var(--white);
 
     margin-right: 20px;
-
-    /* background: url("../../../../../assets/arrow-icon.svg") no-repeat center left var(--black);
-    background-position: .9375rem;   */
 }
 
 .filter-list:focus {
-
     outline: none;
+}
+
+.catalogue-filters {
+    display: flex;
+    gap: 90px;
 }
 

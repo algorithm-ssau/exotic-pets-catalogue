@@ -120,7 +120,7 @@ const Filter = () => {
   };
 
   return (
-    <div>
+    <div className="catalogue-filters">
       <select
         className="filter-list"
         name="kingdom"
