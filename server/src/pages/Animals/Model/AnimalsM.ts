@@ -13,4 +13,12 @@ export class AnimalsM {
 
         return vAnimal
     }
+
+    public async getAnimalsOfSpecifiedKingdom(data: R.getAnimalsOfSpecifiedKingdom.RequestI): Promise<R.getAnimalsOfSpecifiedKingdom.ResponseI> {
+        const vAnimal = await this.AnimalsSQL.getAnimalsOfSpecifiedKingdom(data.kingdom);
+
+        return vAnimal
+    }
+
+    
 }
