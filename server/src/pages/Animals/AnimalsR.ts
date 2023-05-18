@@ -29,6 +29,21 @@ export namespace AnimalsR {
         }
     }
 
+    export namespace getAnimalsOfSpecifiedSpecies {
+        export const route = '/animals/get-species';
+
+        export interface RequestI {
+            species: string;
+        }
+
+        export interface ResponseI {
+            id?: number;
+            name?: string;
+            price?: number;
+            image?: string;
+        }
+    }
+
     export namespace getAllAnimals {
         export const route = '/animals/get-all';
 
