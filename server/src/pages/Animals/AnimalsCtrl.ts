@@ -22,4 +22,14 @@ router.post(R.getAnimalById.route, async (req, res) => {
     res.json(response)
 });
 
+router.post(R.getAnimalsOfSpecifiedKingdom.route, async (req, res) => {
+    const request = req.body as R.getAnimalsOfSpecifiedKingdom.RequestI;
+    let response: R.getAnimalsOfSpecifiedKingdom.ResponseI = {};
+
+    const ctrl = new AnimalsCtrl();
+    response = await ctrl.AnimalsM.getAnimalsOfSpecifiedKingdom(request);
+    
+    res.json(response)
+});
+
 export default router 

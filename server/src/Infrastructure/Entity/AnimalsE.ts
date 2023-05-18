@@ -4,6 +4,13 @@ export interface AnimalsWithImageI {
     image?: string;
 }
 
+export interface catalogueCardI{
+    id?: number;
+    name?: string;
+    price?: number;
+    image?: string;
+}
+
 export interface ImageI {
     id?: number;
     image?: string;
@@ -15,4 +22,12 @@ export class ImageE {
 
 export class AnimalsE {
     public static NAME = 'animals';
+}
+
+export class KingdomsE {
+    public static NAME = 'kingdoms'
+}
+
+export class SpeciesE {
+    public static NAME = 'species'
 }
