@@ -32,6 +32,16 @@ router.post(R.getAnimalsOfSpecifiedKingdom.route, async (req, res) => {
     res.json(response)
 });
 
+router.post(R.getAnimalsOfSpecifiedSpecies.route, async (req, res) => {
+    const request = req.body as R.getAnimalsOfSpecifiedSpecies.RequestI;
+    let response: R.getAnimalsOfSpecifiedSpecies.ResponseI = {};
+
+    const ctrl = new AnimalsCtrl();
+    response = await ctrl.AnimalsM.getAnimalsOfSpecifiedSpecies(request);
+    
+    res.json(response)
+});
+
 router.get(R.getAllAnimals.route, async (req, res) => {
     
     let response: R.getAllAnimals.ResponseI = {};

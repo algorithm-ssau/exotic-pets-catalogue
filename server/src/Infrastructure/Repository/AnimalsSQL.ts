@@ -43,6 +43,23 @@ export class AnimalsSQL {
         return vAnimal;
     }
 
+    public async getAnimalsOfSpecifiedSpecies(sSpecies: string): Promise<catalogueCardI> {
+        let vAnimal: catalogueCardI = {};
+
+        try {
+            vAnimal = await this.db<catalogueCardI>({spc: SpeciesE.NAME})
+            .leftJoin({anima: AnimalsE.NAME}, 'anima.species_id', 'spc.id')
+            .leftJoin({img: ImageE.NAME}, 'img.id', 'anima.images_id')
+            .where('spc.name', sSpecies)
+            .select('anima.id', 'anima.name', 'anima.price','img.image');
+
+        } catch (e) {
+            console.log('getAnimalsOfSpecifiedSpecies sql ERROR', e);
+        }
+
+        return vAnimal;
+    }
+
     public async getAllAnimals(): Promise<catalogueCardI> {
         let vAnimal: catalogueCardI = {};
 
