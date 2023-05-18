@@ -20,5 +20,9 @@ export class AnimalsM {
         return vAnimal
     }
 
-    
+    public async getAllAnimals(): Promise<R.getAllAnimals.ResponseI> {
+        const vAnimal = await this.AnimalsSQL.getAllAnimals();
+
+        return vAnimal
+    }
 }
