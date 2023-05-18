@@ -12,4 +12,22 @@ export namespace AnimalsR {
             image?: string;
         }
     }
+
+
+    export namespace getAnimalsOfSpecifiedKingdom {
+        export const route = '/animals/get-kingdom';
+
+        export interface RequestI {
+            kingdom: string;
+        }
+
+        export interface ResponseI {
+            id?: number;
+            name?: string;
+            price?: number;
+            image?: string;
+        }
+    }
+
+
 }
