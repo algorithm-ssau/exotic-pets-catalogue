@@ -1,8 +1,17 @@
 import React from 'react';
 
+// components
+import Filter from './el/Filter';
+
+//styles
+import "../styles/page_catalogue.css";
+import CatalogueFilter from './el/Filter';
+
 const PageCatalogue = () => {
     return (
-        <h1>catalogue</h1>
+        <div className='filter-container'>
+            <CatalogueFilter></CatalogueFilter>
+        </div>
     );
 }
 

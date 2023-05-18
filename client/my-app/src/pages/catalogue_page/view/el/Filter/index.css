@@ -1,0 +1,36 @@
+.catalogue-filter {
+    width: 1110px;
+    height: 60px;
+
+    position: sticky;
+    top: 0;
+
+    background-color: var(--white);
+
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    padding: .9375rem 2.8125rem;
+    width: 340px;
+    height: 40px;
+
+    border-radius: var(--border-radius);
+
+    background-color: var(--white);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-left: 760px;
+
+    border: 1px solid var(--black);
+
+    background: url("../../../../../assets/search-icon.svg") no-repeat center left var(--white);
+    background-position: .9375rem;  
+}
+
