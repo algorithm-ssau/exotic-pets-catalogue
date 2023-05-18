@@ -1,0 +1,48 @@
+.catalogue-filter-container {
+    width: 1110px;
+    height: 60px;
+    padding: 15px;
+
+    background-color: var(--white);
+
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.search-bar {
+    padding: .9375rem 2.8125rem;
+    width: 340px;
+    height: 40px;
+
+    border-radius: var(--border-radius);
+
+    background-color: var(--white);
+
+    border: 1px solid var(--black);
+
+    background: url("../../../../../assets/search-icon.svg") no-repeat center left var(--white);
+    background-position: .9375rem;  
+}
+
+.filter-list {
+    border: none;
+
+    background-color: var(--white);
+
+    margin-right: 20px;
+}
+
+.filter-list:focus {
+    outline: none;
+}
+
+.catalogue-filters {
+    display: flex;
+    gap: 90px;
+}
+
