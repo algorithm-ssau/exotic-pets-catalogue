@@ -42,4 +42,19 @@ export class AnimalsSQL {
 
         return vAnimal;
     }
+
+    public async getAllAnimals(): Promise<catalogueCardI> {
+        let vAnimal: catalogueCardI = {};
+
+        try {
+            vAnimal = await this.db<catalogueCardI>({table: AnimalsE.NAME})
+            .leftJoin({img: ImageE.NAME}, 'img.id', 'table.images_id')
+            .select('table.id', 'table.name', 'table.price','img.image');
+
+        } catch (e) {
+            console.log('getAllAnimals sql ERROR', e);
+        }
+
+        return vAnimal;
+    }
 }
