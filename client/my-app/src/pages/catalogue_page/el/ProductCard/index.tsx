@@ -44,7 +44,7 @@ const ProductCard = ({id, image, name, price, isFavourite = false, isInCart = fa
 
                 <div className="product-card-info-left">
                     <div className="product-card-price">
-                        {price}
+                        {price} ₽
                     </div>
 
                     <button 

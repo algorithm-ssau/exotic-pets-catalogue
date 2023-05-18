@@ -1,0 +1,9 @@
+.popular-products-container {
+    margin: 0 auto;
+    margin-top: 5rem;
+    width: 1110px;
+}
+
+.products-header {
+    font-size: 3em;
+}
