@@ -1,4 +1,5 @@
 export namespace AnimalsR {
+    
     export namespace getAnimalById {
         export const route = '/animals/get-one-by-id';
 
