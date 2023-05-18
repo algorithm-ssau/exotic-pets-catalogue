@@ -1,6 +1,6 @@
 import IProduct from "../interfaces/IProduct";
 
-export async function getSpeciesAnimals(species: string): Promise<IProduct[]> {
+export async function getSpeciesAnimals(species?: string): Promise<IProduct[]> {
     const response = await fetch('http://25.13.222.253:5000/animals/get-species', {
         method: 'POST',
         headers: {
@@ -14,7 +14,7 @@ export async function getSpeciesAnimals(species: string): Promise<IProduct[]> {
     return response.json();
 }
 
-export async function getKingdomAnimals(kingdom: string): Promise<IProduct[]> {
+export async function getKingdomAnimals(kingdom?: string): Promise<IProduct[]> {
     const response = await fetch('http://25.13.222.253:5000/animals/get-kingdom', {
         method: 'POST',
         headers: {
@@ -28,7 +28,7 @@ export async function getKingdomAnimals(kingdom: string): Promise<IProduct[]> {
     return response.json();
 }
 
-export async function getAllAnimals(): Promise<IProduct[]> {
+export async function getAllAnimals(param?: string): Promise<IProduct[]> {
     const response = await fetch('http://25.13.222.253:5000/animals/get-all');
 
     return response.json();

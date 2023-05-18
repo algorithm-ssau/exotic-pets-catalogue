@@ -16,8 +16,8 @@ import "./index.css"
 import { getSpeciesAnimals, getKingdomAnimals, getAllAnimals } from '../../../../common/service/getAnimalS';
 
 // function to get animals data, that takes function that decides which group of animals would be taken
-async function getAnimals(f: () => Promise<IProduct[]>): Promise<IProduct[]> {
-    const animals = await f();
+async function getAnimals(f: (param?: string) => Promise<IProduct[]>, param: string = ""): Promise<IProduct[]> {
+    const animals = await f(param);
 
     return animals;
 }
@@ -27,7 +27,7 @@ const ProductSlider = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const data = await getAnimals(getAllAnimals);
+            const data = await getAnimals(getAllAnimals, "Совы");
             setAnimals(data);
         }
 
