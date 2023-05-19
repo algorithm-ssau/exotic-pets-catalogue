@@ -84,3 +84,8 @@
 .feedback-button:hover {
     background-color: var(--dark-green);
 }
+
+.feedback-button:disabled {
+    background-color: var(--dark-green);
+    cursor: default;
+}

@@ -19,16 +19,18 @@ const Feedback = () => {
     }
 
     function handleSendFeedback() {
-        setUsername("");
-        setFeedback("");
-        postReview(
-            {
-                name: username,
-                commBody: feedback,
-                img_id: randomInteger(33, 44)
-            }
-        );
-        alert("Ваш отзыв был успешно добавлен!");
+        if (username.trim().length !== 0 && feedback.trim().length !== 0) {
+            setUsername("");
+            setFeedback("");
+            postReview(
+                {
+                    name: username,
+                    commBody: feedback,
+                    img_id: randomInteger(33, 44)
+                }
+            );
+            alert("Ваш отзыв был успешно добавлен!");
+        }
     }
 
     return (
@@ -64,6 +66,7 @@ const Feedback = () => {
                         isLink={false}
                         act={"Отправить"}
                         onClick={handleSendFeedback}
+                        isDisabled={username.trim().length === 0 || feedback.trim().length === 0}
                     />
                 </div>
             </div>

@@ -3,4 +3,5 @@ export default interface IButton {
     isLink?: boolean;
     act: string;
     onClick?: () => void;
+    isDisabled?: boolean;
 }

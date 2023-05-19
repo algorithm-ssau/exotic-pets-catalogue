@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import "./index.css"
 import IButton from '../../../../common/interfaces/IButton';
 
-const Button = ({className, isLink, act, onClick}: IButton) => {
+const Button = ({className, isLink, act, onClick, isDisabled}: IButton) => {
     return (
         <div className="button-container">
             {
                 isLink 
                 ? <Link to="/catalogue"> <button className={className}> {act} </button> </Link>
+                : isDisabled 
+                ? <button className={className} onClick={onClick} disabled={true}> {act} </button>
                 : <button className={className} onClick={onClick}> {act} </button>
             }
         </div>       
