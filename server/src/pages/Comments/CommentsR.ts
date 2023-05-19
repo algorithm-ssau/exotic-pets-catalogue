@@ -11,4 +11,15 @@ export namespace CommentsR{
 
     }
 
+    export namespace getAllComments {
+        export const route = '/comments/get-all-comments';
+
+        export interface ResponseI {
+            "name"?: string
+            "commBody"?: string
+            "image"?: string 
+        }
+
+    }
+
 }
