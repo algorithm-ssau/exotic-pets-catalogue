@@ -3,6 +3,12 @@ export interface ImageI {
     image?: string;
 }
 
+export interface CommentE {
+    "name"?: string
+    "commBody"?: string
+    "image"?: string
+}
+
 export class ImageE {
     public static NAME = 'images'
 }
