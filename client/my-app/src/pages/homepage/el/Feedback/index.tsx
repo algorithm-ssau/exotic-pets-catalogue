@@ -2,6 +2,8 @@ import * as React from 'react';
 import { useState } from 'react';
 import Button from "../Button"
 
+import { randomInteger, postReview } from '../../../../common/service/reviewS';
+
 import './index.css';
 
 const Feedback = () => {
@@ -17,23 +19,16 @@ const Feedback = () => {
     }
 
     function handleSendFeedback() {
-        console.log(username);
-        console.log(feedback);
-
-        fetch('http://25.13.222.253:3000/addData', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                attribute1: username,
-                attribute2: feedback
-            })
-        }).then((response) => {
-            console.log(response);
-        }).catch((error) => {
-            console.error(error);
-        });
+        setUsername("");
+        setFeedback("");
+        postReview(
+            {
+                name: username,
+                commBody: feedback,
+                img_id: randomInteger(33, 44)
+            }
+        );
+        alert("Ваш отзыв был успешно добавлен!");
     }
 
     return (
@@ -47,6 +42,7 @@ const Feedback = () => {
             <div className="right-feedback">
                 <div className="right-feedback-up">
                     <textarea
+                        value={feedback}
                         className="feedback-input"
                         name="text"
                         placeholder="Ваш отзыв"
@@ -56,6 +52,7 @@ const Feedback = () => {
 
                 <div className="right-feedback-down">
                     <input
+                        value={username}
                         className="feedback-name"
                         type="text"
                         placeholder="Ваше имя"
