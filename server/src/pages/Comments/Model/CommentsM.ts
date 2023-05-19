@@ -15,4 +15,10 @@ export class CommentsM{
 
     }
 
+    public async getAllComments(): Promise<R.getAllComments.ResponseI> {
+        const vAnimal = await this.CommentsSQL.getAllComments();
+
+        return vAnimal
+    }
+
 }
