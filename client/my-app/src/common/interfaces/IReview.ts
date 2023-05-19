@@ -1,5 +1,5 @@
 export default interface IReview {
     image: string;
-    name: string;
-    review: string;
+    user_name: string;
+    com_body: string;
 }
