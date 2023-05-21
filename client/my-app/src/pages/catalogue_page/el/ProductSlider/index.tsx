@@ -10,7 +10,7 @@ import ProductCard from '../ProductCard';
 // styles
 import 'swiper/css';
 import 'swiper/css/navigation';
-import "./index.css"
+import "./index.css";
 
 // services 
 import { getSpeciesAnimals, getKingdomAnimals, getAllAnimals } from '../../../../common/service/getAnimalS';
@@ -35,9 +35,10 @@ const ProductSlider = () => {
     }, []);
 
     return (
-        <div className="product-slider-container">
+        <div className="catalogue-slider-container">
             <Swiper
                 modules={[Navigation]}
+                spaceBetween={30}
                 slidesPerView={3}
                 navigation
             >
