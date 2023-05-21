@@ -1,122 +1,99 @@
-import React, { useState } from "react";
-
-import './index.css';
+import { observer } from "mobx-react";
+import productStore from "../../../../store/speciesStore";
 
 const Filter = () => {
-
-  const [selectedKingdom, setSelectedKingdom] = useState("all");
-  const [speciesOptions, setSpeciesOptions] = useState([
-    { label: "Все", value: "all" },
-    { label: "Приматы", value: "1" },
-    { label: "Лисицы", value: "2" },
-    { label: "Попугаи", value: "3" },
-    { label: "Совы", value: "4" },
-    { label: "Лягушки", value: "5" },
-    { label: "Ящерицы", value: "6" },
-    { label: "Крокодилы", value: "7" },
-    { label: "Черепахи", value: "8" },
-    { label: "Кошки", value: "9" },
-    { label: "Скорпионы", value: "10" },
-    { label: "Пауки", value: "11" },
-    { label: "Муравьи", value: "12" },
-    { label: "Жуки", value: "13" },
-    { label: "Хрящевые рыбы", value: "14" },
-    { label: "Костные рыбы", value: "15" },
-    { label: "Жабы", value: "16" }
-  ]);
-
   const handleKingdomChange = (event: any) => {
     const selectedValue = event.target.value;
 
-    setSelectedKingdom(selectedValue);
-
-    // Определяем список видов животных на основе выбранного класса
-    let updatedSpeciesOptions = [];
-
+    productStore.setKingdom(selectedValue);
+    
     switch (selectedValue) {
       case "1":
-        updatedSpeciesOptions = [
+        productStore.setSpeciesOptions([
           { label: "Все", value: "all" },
           { label: "Приматы", value: "1" },
           { label: "Лисицы", value: "2" },
           { label: "Кошки", value: "9" }
-        ];
+        ]);
         break;
 
       case "2":
-        updatedSpeciesOptions = [
+        productStore.setSpeciesOptions([
           { label: "Все", value: "all" },
           { label: "Попугаи", value: "3" },
           { label: "Совы", value: "4" }
-        ];
+        ]);
         break;
 
       case "3":
-        updatedSpeciesOptions = [
+        productStore.setSpeciesOptions([
           { label: "Все", value: "all" },
           { label: "Ящерицы", value: "6" },
           { label: "Крокодилы", value: "7" },
           { label: "Черепахи", value: "8" }
-        ];
+        ]);
         break;
 
       case "4":
-        updatedSpeciesOptions = [
+        productStore.setSpeciesOptions([
           { label: "Все", value: "all" },
           { label: "Лягушки", value: "5" },
           { label: "Жабы", value: "16" }
-
-        ];
+        ]);
         break;
 
       case "5":
-        updatedSpeciesOptions = [
+        productStore.setSpeciesOptions([
           { label: "Все", value: "all" },
           { label: "Хрящевые рыбы", value: "14" },
           { label: "Костные рыбы", value: "15" }
-        ];
+        ]);
         break;
 
-        case "6":
-          updatedSpeciesOptions = [
-            { label: "Все", value: "all" },
-            { label: "Муравьи", value: "12" },
-            { label: "Жуки", value: "13" }
-          ];
-          break;
+      case "6":
+        productStore.setSpeciesOptions([
+          { label: "Все", value: "all" },
+          { label: "Муравьи", value: "12" },
+          { label: "Жуки", value: "13" }
+        ]);
+        break;
 
-        case "7":
-          updatedSpeciesOptions = [
-            { label: "Все", value: "all" },
-            { label: "Скорпионы", value: "10" },
-            { label: "Пауки", value: "11" }
-          ];
-          break;
+      case "7":
+        productStore.setSpeciesOptions([
+          { label: "Все", value: "all" },
+          { label: "Скорпионы", value: "10" },
+          { label: "Пауки", value: "11" }
+        ]);
+        break;
 
-          default:
-            updatedSpeciesOptions = [
-              { label: "Все", value: "all" },
-              { label: "Приматы", value: "1" },
-              { label: "Лисицы", value: "2" },
-              { label: "Попугаи", value: "3" },
-              { label: "Совы", value: "4" },
-              { label: "Лягушки", value: "5" },
-              { label: "Ящерицы", value: "6" },
-              { label: "Крокодилы", value: "7" },
-              { label: "Черепахи", value: "8" },
-              { label: "Кошки", value: "9" },
-              { label: "Скорпионы", value: "10" },
-              { label: "Пауки", value: "11" },
-              { label: "Муравьи", value: "12" },
-              { label: "Жуки", value: "13" },
-              { label: "Хрящевые рыбы", value: "14" },
-              { label: "Костные рыбы", value: "15" },
-              { label: "Жабы", value: "16" }
-            ];
-            break;
+      default:
+        productStore.setSpeciesOptions([
+          { label: "Все", value: "all" },
+          { label: "Приматы", value: "1" },
+          { label: "Лисицы", value: "2" },
+          { label: "Попугаи", value: "3" },
+          { label: "Совы", value: "4" },
+          { label: "Лягушки", value: "5" },
+          { label: "Ящерицы", value: "6" },
+          { label: "Крокодилы", value: "7" },
+          { label: "Черепахи", value: "8" },
+          { label: "Кошки", value: "9" },
+          { label: "Скорпионы", value: "10" },
+          { label: "Пауки", value: "11" },
+          { label: "Муравьи", value: "12" },
+          { label: "Жуки", value: "13" },
+          { label: "Хрящевые рыбы", value: "14" },
+          { label: "Костные рыбы", value: "15" },
+          { label: "Жабы", value: "16" }
+        ]);
+        break;
     }
-    
-    setSpeciesOptions(updatedSpeciesOptions);
+  };
+
+  const handleSpeciesChange = (event: any) => {
+    const selectedValue = event.target.value;
+
+    productStore.setSpecies(selectedValue);
   };
 
   return (
@@ -124,7 +101,7 @@ const Filter = () => {
       <select
         className="filter-list"
         name="kingdom"
-        value={selectedKingdom}
+        value={productStore.selectedKingdom}
         onChange={handleKingdomChange}
       >
         <option disabled value="all">
@@ -140,15 +117,21 @@ const Filter = () => {
         <option value="7">Паукообразные</option>
       </select>
 
-      <select className="filter-list" name="species">
-        {speciesOptions.map((species) => (
-          <option key={species.value} value={species.value}>
-            {species.label}
-          </option>
-        ))}
+      <select
+        className="filter-list"
+        name="species"
+        value={productStore.selectedSpecies}
+        onChange={handleSpeciesChange}
+      >
+        {productStore.speciesOptions
+          .map((species) => (
+            <option key={species.value} value={species.value}>
+              {species.label}
+            </option>
+          ))}
       </select>
     </div>
   );
 };
 
-export default Filter;
+export default observer(Filter);
