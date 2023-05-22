@@ -1,5 +1,5 @@
 import { observer } from "mobx-react";
-import productStore from "../../../../store/speciesStore";
+import productStore from "../../../../store/productStore";
 
 const Filter = () => {
   const handleKingdomChange = (event: any) => {
