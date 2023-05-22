@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
+import { observer } from "mobx-react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
 // interfaces, components
 import IProduct from '../../../../common/interfaces/IProduct';
 import ProductCard from '../ProductCard';
+import productStore from '../../../../store/productStore';
 
 // styles
 import 'swiper/css';
@@ -23,12 +25,12 @@ async function getAnimals(f: (param?: string) => Promise<IProduct[]>, param: str
 }
 
 const ProductSlider = () => {
-    const [animals, setAnimals] = useState<IProduct[]>([]);
+    const [, setAnimals] = useState<IProduct[]>([]);
 
     useEffect(() => {
         async function fetchData() {
-            const data = await getAnimals(getAllAnimals, "Совы");
-            setAnimals(data);
+            await productStore.fetchProducts();
+            setAnimals(productStore.products);
         }
 
         fetchData();
@@ -42,7 +44,7 @@ const ProductSlider = () => {
                 slidesPerView={3}
                 navigation
             >
-                {animals.map(animal => {
+                {productStore.products.map(animal => {
                     return (
                         <SwiperSlide key={animal.id}>
                             <ProductCard
@@ -59,4 +61,4 @@ const ProductSlider = () => {
     );
 }
 
-export default ProductSlider;
+export default observer(ProductSlider);
