@@ -46,12 +46,12 @@ class productStore {
     makeAutoObservable(this);
   }
 
-  private getKingdomLabel(value: string) {
+  getKingdomLabel(value: string) {
     const option = this.kingdomOptions.find((option) => option.value === value);
     return option?.label;
   }
 
-  private getSpeciesLabel(value: string) {
+  getSpeciesLabel(value: string) {
     const option = this.speciesOptions.find((option) => option.value === value);
     return option?.label;
   }
@@ -70,7 +70,7 @@ class productStore {
       runInAction(() => {
         this.products = products;
       });
-      
+
     } else {
       const products = await getAllAnimals();
 
