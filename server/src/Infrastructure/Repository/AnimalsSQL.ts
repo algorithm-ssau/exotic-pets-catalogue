@@ -25,7 +25,7 @@ export class AnimalsSQL {
         return vAnimal;
     }
 
-    public async getAnimalsOfSpecifiedKingdom(sKingdom: string): Promise<catalogueCardI> {
+    public async getAnimalsOfSpecifiedKingdom(nKingdom: number): Promise<catalogueCardI> {
         let vAnimal: catalogueCardI = {};
 
         try {
@@ -33,7 +33,7 @@ export class AnimalsSQL {
             .leftJoin({spc: SpeciesE.NAME}, 'spc.kingdoms_id', 'king.id')
             .leftJoin({anima: AnimalsE.NAME}, 'anima.species_id', 'spc.id')
             .leftJoin({img: ImageE.NAME}, 'img.id', 'anima.images_id')
-            .where('king.name', sKingdom)
+            .where('king.id', nKingdom)
             .select('anima.id', 'anima.name', 'anima.price','img.image');
 
         } catch (e) {
@@ -43,14 +43,14 @@ export class AnimalsSQL {
         return vAnimal;
     }
 
-    public async getAnimalsOfSpecifiedSpecies(sSpecies: string): Promise<catalogueCardI> {
+    public async getAnimalsOfSpecifiedSpecies(nSpecies: number): Promise<catalogueCardI> {
         let vAnimal: catalogueCardI = {};
 
         try {
             vAnimal = await this.db<catalogueCardI>({spc: SpeciesE.NAME})
             .leftJoin({anima: AnimalsE.NAME}, 'anima.species_id', 'spc.id')
             .leftJoin({img: ImageE.NAME}, 'img.id', 'anima.images_id')
-            .where('spc.name', sSpecies)
+            .where('spc.id', nSpecies)
             .select('anima.id', 'anima.name', 'anima.price','img.image');
 
         } catch (e) {

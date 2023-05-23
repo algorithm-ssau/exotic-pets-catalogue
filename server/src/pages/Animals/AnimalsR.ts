@@ -19,7 +19,7 @@ export namespace AnimalsR {
         export const route = '/animals/get-kingdom';
 
         export interface RequestI {
-            kingdom: string;
+            kingdom: number;
         }
 
         export interface ResponseI {
@@ -34,7 +34,7 @@ export namespace AnimalsR {
         export const route = '/animals/get-species';
 
         export interface RequestI {
-            species: string;
+            species: number;
         }
 
         export interface ResponseI {
