@@ -1,33 +1,18 @@
 import IProduct from "../interfaces/IProduct";
+import { fSend } from "./fetchS";
 
 const IP = 'localhost';
 
-export async function getSpeciesAnimals(species?: string): Promise<IProduct[]> {
-    const response = await fetch(`http://${IP}:5000/animals/get-species`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            species: species
-        })
-    })
+export async function getSpeciesAnimals(species?: number): Promise<IProduct[]> {
+    const response = await fSend('/animals/get-species', {species});
 
-    return response.json();
+    return response.data;
 }
 
-export async function getKingdomAnimals(kingdom?: string): Promise<IProduct[]> {
-    const response = await fetch(`http://${IP}:5000/animals/get-kingdom`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            kingdom: kingdom
-        })
-    })
+export async function getKingdomAnimals(kingdom?: number): Promise<IProduct[]> {
+    const response = await fSend('/animals/get-kingdom', {kingdom});
 
-    return response.json();
+    return response.data;
 }
 
 export async function getAllAnimals(param?: string): Promise<IProduct[]> {

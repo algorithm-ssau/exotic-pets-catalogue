@@ -1,7 +1,39 @@
 import { observer } from "mobx-react";
 import productStore from "../../../../store/productStore";
+import { kingdomFilterT, speciesFilterT } from "../../view/ifc_catalogue";
 
 const Filter = () => {
+  const kingdomOptions = [
+    {label: "Все", value: kingdomFilterT.all},
+    {label: "Млекопитающие", value: kingdomFilterT.mammals},
+    {label: "Птицы", value: kingdomFilterT.birds},
+    {label: "Рептилии", value: kingdomFilterT.reptiles},
+    {label: "Земноводные", value: kingdomFilterT.frogs},
+    {label: "Рыбы", value: kingdomFilterT.fish},
+    {label: "Насекомые", value: kingdomFilterT.insects},
+    {label: "Паукообразные", value: kingdomFilterT.spiders},
+  ]
+  
+  const speciesOptions = [
+    { label: "Все", value: speciesFilterT.all },
+    { label: "Приматы", value: speciesFilterT.primates },
+    { label: "Лисицы", value: speciesFilterT.foxes },
+    { label: "Попугаи", value: speciesFilterT.parrots },
+    { label: "Совы", value: speciesFilterT.owls },
+    { label: "Лягушки", value: speciesFilterT.frogs },
+    { label: "Ящерицы", value: speciesFilterT.lizards },
+    { label: "Крокодилы", value: speciesFilterT.crocs },
+    { label: "Черепахи", value: speciesFilterT.turtle },
+    { label: "Кошки", value: speciesFilterT.cats },
+    { label: "Скорпионы", value: speciesFilterT.scorpions },
+    { label: "Пауки", value: speciesFilterT.spiders },
+    { label: "Муравьи", value: speciesFilterT.ants },
+    { label: "Жуки", value: speciesFilterT.bugs },
+    { label: "Хрящевые рыбы", value: speciesFilterT.fish1 },
+    { label: "Костные рыбы", value: speciesFilterT.fish2 },
+    { label: "Жабы", value: speciesFilterT.bigFrogs }
+  ];
+
   const handleKingdomChange = (event: any) => {
     const selectedValue = event.target.value;
 
@@ -104,17 +136,14 @@ const Filter = () => {
         value={productStore.selectedKingdom}
         onChange={handleKingdomChange}
       >
-        <option disabled value="all">
+        <option disabled selected hidden value="all">
           Класс животного
         </option>
-        <option value="all">Все</option>
-        <option value="1">Млекопитающие</option>
-        <option value="2">Птицы</option>
-        <option value="3">Рептилии</option>
-        <option value="4">Земноводные</option>
-        <option value="5">Рыбы</option>
-        <option value="6">Насекомые</option>
-        <option value="7">Паукообразные</option>
+        {
+          kingdomOptions.map((item) => {
+            return <option value={item.value} key={item.value}>{item.label}</option>
+          })
+        }
       </select>
 
       <select
@@ -123,7 +152,7 @@ const Filter = () => {
         value={productStore.selectedSpecies}
         onChange={handleSpeciesChange}
       >
-        {productStore.speciesOptions
+        {speciesOptions
           .map((species) => (
             <option key={species.value} value={species.value}>
               {species.label}
