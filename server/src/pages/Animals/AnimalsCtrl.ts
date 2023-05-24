@@ -52,4 +52,14 @@ router.get(R.getAllAnimals.route, async (req, res) => {
     res.json(response)
 });
 
+router.post(R.getAnimalsThroughSearch.route, async (req, res) => {
+    const request = req.body as R.getAnimalsThroughSearch.RequestI;
+    let response: R.getAnimalsThroughSearch.ResponseI = {};
+
+    const ctrl = new AnimalsCtrl();
+    response = await ctrl.AnimalsM.searchAnimals(request);
+    
+    res.json(response)
+});
+
 export default router 
