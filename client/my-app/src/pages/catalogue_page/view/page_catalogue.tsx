@@ -17,7 +17,7 @@ const PageCatalogue = () => {
 
     return (
         <div className="catalogue-page-container">
-            <div className='filter-container'>
+            <div className="filter-container">
                 <CatalogueFilter></CatalogueFilter>
             </div>
 

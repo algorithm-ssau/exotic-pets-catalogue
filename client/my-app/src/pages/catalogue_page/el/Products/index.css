@@ -2,6 +2,7 @@
     width: 1110px;
     margin: 0 auto;
     margin-top: 3.125rem;
+    margin-bottom: 5rem; /* Better not use margin bottoms */
     
     list-style-type: none;
 

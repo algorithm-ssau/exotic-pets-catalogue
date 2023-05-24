@@ -4,6 +4,11 @@
     margin: 0 auto;
 }
 
+.filter-container {
+    position: sticky;
+    top: 96px;
+}
+
 .popular-products-container {
     margin-top: 5rem;
 }
