@@ -1,5 +1,5 @@
 export namespace AnimalsR {
-    
+
     export namespace getAnimalById {
         export const route = '/animals/get-one-by-id';
 
@@ -23,10 +23,18 @@ export namespace AnimalsR {
         }
 
         export interface ResponseI {
-            id?: number;
-            name?: string;
-            price?: number;
-            image?: string;
+
+            aAnimals?: {
+                id?: number;
+                name?: string;
+                price?: number;
+                image?: string;
+            }
+
+            aSpecies?: {
+                id?: number;
+                name?: string;
+            }
         }
     }
 
