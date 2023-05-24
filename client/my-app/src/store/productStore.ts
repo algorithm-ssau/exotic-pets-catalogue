@@ -1,15 +1,18 @@
 import { makeAutoObservable, runInAction } from "mobx";
-import IOptions from "../common/interfaces/IOptions";
+import { getAllAnimals, getKingdomAnimals, getSearchAnimals, getSpeciesAnimals } from "../common/service/getAnimalS";
 import IProduct from "../common/interfaces/IProduct";
-import { getAllAnimals, getKingdomAnimals, getSpeciesAnimals } from "../common/service/getAnimalS";
+import ISpecies from "../common/interfaces/ISpecies";
 
 class productStore {
   selectedKingdom = 0;
 
   selectedSpecies = 0;
 
+  searchingProduct = "";
+
+  speciesOptions: ISpecies[] = [];
+
   products: IProduct[] = [];
-  filteredProducts: IProduct[] = []
 
   constructor() {
     makeAutoObservable(this);
@@ -25,6 +28,14 @@ class productStore {
   //   return option?.label;
   // }
 
+  async searchProducts() {
+    const products = await getSearchAnimals(this.searchingProduct);
+
+    runInAction(() => {
+      this.products = products;
+    });
+  }
+
   async fetchProducts() {
     if (this.selectedSpecies !== 0) {
       const products = await getSpeciesAnimals(this.selectedSpecies);
@@ -34,19 +45,26 @@ class productStore {
       });
 
     } else if (this.selectedKingdom !== 0) {
-      const products = await getKingdomAnimals(this.selectedKingdom);
+      const productsKingdom = await getKingdomAnimals(this.selectedKingdom);
 
       runInAction(() => {
-        this.products = products;
+        this.products = productsKingdom.aAnimals;
+        this.speciesOptions = productsKingdom.aSpecies;
       });
 
     } else {
-      const products = await getAllAnimals();
+      const productsKingdom = await getAllAnimals();
 
       runInAction(() => {
-        this.products = products;
+        this.products = productsKingdom.aAnimals;
+        this.speciesOptions = productsKingdom.aSpecies;
       });
     }
+  }
+
+  setSearchingProducts(value: string) {
+    this.searchingProduct = value;
+    this.searchProducts();
   }
 
   setKingdom(value: number) {
@@ -57,11 +75,6 @@ class productStore {
 
   setSpecies(value: number) {
     this.selectedSpecies = value;
-    this.fetchProducts();
-  }
-
-  setSpeciesOptions(value: IOptions[]) {
-    // this.speciesOptions = value;
     this.fetchProducts();
   }
 }
