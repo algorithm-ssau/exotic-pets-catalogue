@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import Card from '../Card';
+import Input from '../Input';
 
 import './index.css';
 
@@ -12,7 +13,14 @@ const Payment = () => {
                 />
             </div>
             <div className="right-payment">
-
+                <span className="address">Адрес</span>
+                <Input
+                    holder=""
+                />
+                <span className="email">E-mail</span>
+                <Input
+                    holder=""
+                />
             </div>
         </form>
     )
