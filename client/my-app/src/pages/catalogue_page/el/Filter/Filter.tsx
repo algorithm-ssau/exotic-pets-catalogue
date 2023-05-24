@@ -34,13 +34,13 @@ const Filter = () => {
     { label: "Жабы", value: speciesFilterT.bigFrogs }
   ];
 
-  const handleKingdomChange = (event: any) => {
-    const selectedValue = event.target.value;
+  const handleKingdomChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedValue: number = +event.target.value;
 
     productStore.setKingdom(selectedValue);
     
     switch (selectedValue) {
-      case "1":
+      case kingdomFilterT.mammals:
         productStore.setSpeciesOptions([
           { label: "Все", value: "all" },
           { label: "Приматы", value: "1" },
@@ -49,7 +49,7 @@ const Filter = () => {
         ]);
         break;
 
-      case "2":
+      case kingdomFilterT.birds:
         productStore.setSpeciesOptions([
           { label: "Все", value: "all" },
           { label: "Попугаи", value: "3" },
@@ -57,7 +57,7 @@ const Filter = () => {
         ]);
         break;
 
-      case "3":
+      case kingdomFilterT.reptiles:
         productStore.setSpeciesOptions([
           { label: "Все", value: "all" },
           { label: "Ящерицы", value: "6" },
@@ -66,7 +66,7 @@ const Filter = () => {
         ]);
         break;
 
-      case "4":
+      case kingdomFilterT.frogs:
         productStore.setSpeciesOptions([
           { label: "Все", value: "all" },
           { label: "Лягушки", value: "5" },
@@ -74,7 +74,7 @@ const Filter = () => {
         ]);
         break;
 
-      case "5":
+      case kingdomFilterT.fish:
         productStore.setSpeciesOptions([
           { label: "Все", value: "all" },
           { label: "Хрящевые рыбы", value: "14" },
@@ -82,7 +82,7 @@ const Filter = () => {
         ]);
         break;
 
-      case "6":
+      case kingdomFilterT.insects:
         productStore.setSpeciesOptions([
           { label: "Все", value: "all" },
           { label: "Муравьи", value: "12" },
@@ -90,7 +90,7 @@ const Filter = () => {
         ]);
         break;
 
-      case "7":
+      case kingdomFilterT.spiders:
         productStore.setSpeciesOptions([
           { label: "Все", value: "all" },
           { label: "Скорпионы", value: "10" },
@@ -122,8 +122,8 @@ const Filter = () => {
     }
   };
 
-  const handleSpeciesChange = (event: any) => {
-    const selectedValue = event.target.value;
+  const handleSpeciesChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedValue: number = +event.target.value;
 
     productStore.setSpecies(selectedValue);
   };
@@ -134,9 +134,9 @@ const Filter = () => {
         className="filter-list"
         name="kingdom"
         value={productStore.selectedKingdom}
-        onChange={handleKingdomChange}
+        onChange={(e) => { handleKingdomChange(e) }}
       >
-        <option disabled selected hidden value="all">
+        <option disabled selected hidden value={kingdomFilterT.all}>
           Класс животного
         </option>
         {
@@ -150,7 +150,7 @@ const Filter = () => {
         className="filter-list"
         name="species"
         value={productStore.selectedSpecies}
-        onChange={handleSpeciesChange}
+        onChange={(e) => { handleSpeciesChange(e) }}
       >
         {speciesOptions
           .map((species) => (
