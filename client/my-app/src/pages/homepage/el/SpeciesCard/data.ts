@@ -3,32 +3,32 @@ import ISpecies from "../../../../common/interfaces/ISpecies";
 const speciesData: ISpecies[] = [
     {
         id: 1,
-        species: "Рептилии",
+        name: "Рептилии",
         image: "https://i.ibb.co/wKdkzmx/image-31.png",
     },
     {
         id: 2,
-        species: "Птицы",
+        name: "Птицы",
         image: "https://i.ibb.co/b3sZM28/image-31-2.png",
     },
     {
         id: 3,
-        species: "Кошки",
+        name: "Кошки",
         image: "https://i.ibb.co/vXvyGr6/image-31-3.png",
     },
     {
         id: 4,
-        species: "Лисы",
+        name: "Лисы",
         image: "https://i.ibb.co/WPXdZQW/image-31-4.png",
     },
     {
         id: 5,
-        species: "Насекомые",
+        name: "Насекомые",
         image: "https://i.ibb.co/kcqvSYR/image-31-5.png",
     },
     {
         id: 6,
-        species: "Пауки",
+        name: "Пауки",
         image: "https://i.ibb.co/Lp9mWZH/image-31-6.png",
     },
 ]
