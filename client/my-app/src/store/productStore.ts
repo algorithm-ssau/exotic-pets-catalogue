@@ -18,16 +18,6 @@ class productStore {
     makeAutoObservable(this);
   }
 
-  // getKingdomLabel(value: string) {
-  //   const option = this.kingdomOptions.find((option) => option.value === value);
-  //   return option?.label;
-  // }
-
-  // getSpeciesLabel(value: string) {
-  //   const option = this.speciesOptions.find((option) => option.value === value);
-  //   return option?.label;
-  // }
-
   async searchProducts() {
     const products = await getSearchAnimals(this.searchingProduct);
 
