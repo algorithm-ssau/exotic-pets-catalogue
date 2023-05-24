@@ -4,11 +4,31 @@ export interface AnimalsWithImageI {
     image?: string;
 }
 
+export interface AnimalsPlusSpecies {
+
+    aAnimals?: {
+        id?: number;
+        name?: string;
+        price?: number;
+        image?: string;
+    }
+
+    aSpecies?: {
+        id?: number;
+        name?: string;
+    }
+}
+
 export interface catalogueCardI{
     id?: number;
     name?: string;
     price?: number;
     image?: string;
+}
+
+export interface SpeciesI {
+    id?: number;
+    name?: string;
 }
 
 export interface ImageI {
