@@ -1,4 +1,4 @@
-import { AnimalsE, AnimalsWithImageI, ImageE, KingdomsE, SpeciesE, catalogueCardI, KingdomAnuimalsWithSpecies, SpeciesI } from "../Entity/AnimalsE";
+import { AnimalsE, AnimalsWithImageI, ImageE, KingdomsE, SpeciesE, catalogueCardI, AnimalsPlusSpecies, SpeciesI } from "../Entity/AnimalsE";
 import config from "../../../config";
 import knex, { Knex } from "knex";
 
@@ -25,8 +25,8 @@ export class AnimalsSQL {
         return vAnimal;
     }
 
-    public async getAnimalsOfSpecifiedKingdom(nKingdom: number): Promise<KingdomAnuimalsWithSpecies> {
-        let vKingplusSpec: KingdomAnuimalsWithSpecies = {};
+    public async getAnimalsOfSpecifiedKingdom(nKingdom: number): Promise<AnimalsPlusSpecies> {
+        let vKingplusSpec: AnimalsPlusSpecies = {};
 
         try {
 
@@ -68,19 +68,25 @@ export class AnimalsSQL {
         return vAnimal;
     }
 
-    public async getAllAnimals(): Promise<catalogueCardI> {
-        let vAnimal: catalogueCardI = {};
+    public async getAllAnimals(): Promise<AnimalsPlusSpecies> {
+        let vAnimalPlusSpec: AnimalsPlusSpecies = {};
 
         try {
-            vAnimal = await this.db<catalogueCardI>({ anima: AnimalsE.NAME })
-                .leftJoin({ img: ImageE.NAME }, 'img.id', 'anima.images_id')
-                .select('anima.id', 'anima.name', 'anima.price', 'img.image');
+            vAnimalPlusSpec = {
+
+                aAnimals: await this.db<catalogueCardI>({ anima: AnimalsE.NAME })
+                    .leftJoin({ img: ImageE.NAME }, 'img.id', 'anima.images_id')
+                    .select('anima.id', 'anima.name', 'anima.price', 'img.image'),
+
+                aSpecies: await this.db<SpeciesI>({ spc: SpeciesE.NAME })
+                    .select('spc.id', 'spc.name')
+            }
 
         } catch (e) {
             console.log('getAllAnimals sql ERROR', e);
         }
 
-        return vAnimal;
+        return vAnimalPlusSpec;
     }
 
     public async searchAnimals(sTerm: string): Promise<catalogueCardI> {

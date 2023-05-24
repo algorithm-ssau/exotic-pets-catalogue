@@ -57,10 +57,17 @@ export namespace AnimalsR {
         export const route = '/animals/get-all';
 
         export interface ResponseI {
-            id?: number;
-            name?: string;
-            price?: number;
-            image?: string;
+            aAnimals?: {
+                id?: number;
+                name?: string;
+                price?: number;
+                image?: string;
+            }
+
+            aSpecies?: {
+                id?: number;
+                name?: string;
+            }
         }
     }
     

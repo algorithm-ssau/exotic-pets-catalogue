@@ -4,7 +4,7 @@ export interface AnimalsWithImageI {
     image?: string;
 }
 
-export interface KingdomAnuimalsWithSpecies {
+export interface AnimalsPlusSpecies {
 
     aAnimals?: {
         id?: number;
