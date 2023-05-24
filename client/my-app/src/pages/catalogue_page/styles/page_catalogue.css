@@ -1,7 +1,12 @@
-.popular-products-container, 
+.products-header, 
 .filter-container {
     width: 1110px;
     margin: 0 auto;
+}
+
+.filter-container {
+    position: sticky;
+    top: 96px;
 }
 
 .popular-products-container {
@@ -9,5 +14,7 @@
 }
 
 .products-header {
+    margin-top: 5rem;
+
     font-size: 3em;
 }
