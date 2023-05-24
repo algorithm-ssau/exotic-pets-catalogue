@@ -72,12 +72,28 @@ export class AnimalsSQL {
         let vAnimal: catalogueCardI = {};
 
         try {
-            vAnimal = await this.db<catalogueCardI>({ table: AnimalsE.NAME })
-                .leftJoin({ img: ImageE.NAME }, 'img.id', 'table.images_id')
-                .select('table.id', 'table.name', 'table.price', 'img.image');
+            vAnimal = await this.db<catalogueCardI>({ anima: AnimalsE.NAME })
+                .leftJoin({ img: ImageE.NAME }, 'img.id', 'anima.images_id')
+                .select('anima.id', 'anima.name', 'anima.price', 'img.image');
 
         } catch (e) {
             console.log('getAllAnimals sql ERROR', e);
+        }
+
+        return vAnimal;
+    }
+
+    public async searchAnimals(sTerm: string): Promise<catalogueCardI> {
+        let vAnimal: catalogueCardI = {};
+
+        try {
+            vAnimal = await this.db<catalogueCardI>({ anima: AnimalsE.NAME })
+                .leftJoin({ img: ImageE.NAME }, 'img.id', 'anima.images_id')
+                .where('anima.name'.toLowerCase(), 'like', `%${sTerm}%`.toLowerCase())
+                .select('anima.id', 'anima.name', 'anima.price', 'img.image');
+
+        } catch (e) {
+            console.log('getAnimalsOfSpecifiedSpecies sql ERROR', e);
         }
 
         return vAnimal;
