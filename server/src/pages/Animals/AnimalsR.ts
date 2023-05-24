@@ -63,4 +63,19 @@ export namespace AnimalsR {
             image?: string;
         }
     }
+    
+    export namespace getAnimalsThroughSearch {
+        export const route = '/animals/search';
+
+        export interface RequestI {
+            term: string;
+        }
+
+        export interface ResponseI {
+            id?: number;
+            name?: string;
+            price?: number;
+            image?: string;
+        }
+    }
 }
