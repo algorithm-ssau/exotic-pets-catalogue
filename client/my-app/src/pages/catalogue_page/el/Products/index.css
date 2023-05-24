@@ -1,0 +1,11 @@
+.catalogue-products-container {
+    width: 1110px;
+    margin: 0 auto;
+    margin-top: 3.125rem;
+    
+    list-style-type: none;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}

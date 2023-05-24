@@ -1,4 +1,4 @@
-.popular-products-container, 
+.products-header, 
 .filter-container {
     width: 1110px;
     margin: 0 auto;
@@ -9,5 +9,7 @@
 }
 
 .products-header {
+    margin-top: 5rem;
+
     font-size: 3em;
 }
