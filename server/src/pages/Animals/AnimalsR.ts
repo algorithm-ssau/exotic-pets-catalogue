@@ -1,5 +1,5 @@
 export namespace AnimalsR {
-    
+
     export namespace getAnimalById {
         export const route = '/animals/get-one-by-id';
 
@@ -19,14 +19,22 @@ export namespace AnimalsR {
         export const route = '/animals/get-kingdom';
 
         export interface RequestI {
-            kingdom: string;
+            kingdom: number;
         }
 
         export interface ResponseI {
-            id?: number;
-            name?: string;
-            price?: number;
-            image?: string;
+
+            aAnimals?: {
+                id?: number;
+                name?: string;
+                price?: number;
+                image?: string;
+            }
+
+            aSpecies?: {
+                id?: number;
+                name?: string;
+            }
         }
     }
 
@@ -34,7 +42,7 @@ export namespace AnimalsR {
         export const route = '/animals/get-species';
 
         export interface RequestI {
-            species: string;
+            species: number;
         }
 
         export interface ResponseI {
@@ -47,6 +55,28 @@ export namespace AnimalsR {
 
     export namespace getAllAnimals {
         export const route = '/animals/get-all';
+
+        export interface ResponseI {
+            aAnimals?: {
+                id?: number;
+                name?: string;
+                price?: number;
+                image?: string;
+            }
+
+            aSpecies?: {
+                id?: number;
+                name?: string;
+            }
+        }
+    }
+    
+    export namespace getAnimalsThroughSearch {
+        export const route = '/animals/search';
+
+        export interface RequestI {
+            term: string;
+        }
 
         export interface ResponseI {
             id?: number;

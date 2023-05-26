@@ -23,10 +23,10 @@ export class CommentsSQL {
     }
 
     public async getAllComments(): Promise<CommentE> {
-        let vAnimal: CommentE = {};
+        let vComment: CommentE = {};
 
         try {
-            vAnimal = await this.db<CommentE>({table: CommentsTableE.NAME})
+            vComment = await this.db<CommentE>({table: CommentsTableE.NAME})
                 .leftJoin({img: ImageE.NAME}, 'img.id', 'table.images_id')
                 .select('table.user_name', 'table.com_body', 'img.image');
 
@@ -34,6 +34,6 @@ export class CommentsSQL {
             console.log('getAllComments sql ERROR', e);
         }
 
-        return vAnimal;
+        return vComment;
     }
 }

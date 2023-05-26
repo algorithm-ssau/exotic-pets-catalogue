@@ -48,7 +48,7 @@ const PageHome = () => {
                     return (
                         <li key={specie.id}>
                             <SpeciesCard
-                                species={specie.species}
+                                name={specie.name}
                                 image={specie.image}
                             />
                         </li>
