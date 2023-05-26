@@ -1,4 +1,45 @@
 .payment {
-    display: flex;
-    justify-content: space-around;
+    height: 480px;
+    width: fit-content;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: space-around;
+    align-items: center;
 }
+
+.left-payment {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.address-container,
+.email-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.address,
+.email {
+    color: var(--white);
+}
+
+.address-email-input {
+    border-radius: var(--border-radius);
+
+    width: 350px;
+    height: 50px;
+
+    background-color: var(--white);
+
+    resize: none;
+    outline: none;
+    border: none;
+    
+    padding: 10px;
+
+    margin-top: 5px;
+}
+

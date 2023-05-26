@@ -5,4 +5,11 @@
 
 .payment-container {
     width: 1110px;
+
+    border-radius: var(--border-radius);
+
+    background-color: var(--brown);
+
+    display: flex;
+    justify-content: center;
 }

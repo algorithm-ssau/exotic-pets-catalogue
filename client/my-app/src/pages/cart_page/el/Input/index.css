@@ -1,0 +1,11 @@
+.input-component-text {
+    border-radius: var(--border-radius);
+
+    resize: none;
+    outline: none;
+    border: none;
+    
+    padding: 10px;
+
+    background-color: #E0D0C1;
+}

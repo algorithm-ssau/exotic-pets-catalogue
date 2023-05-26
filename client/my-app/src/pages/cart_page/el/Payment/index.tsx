@@ -13,14 +13,16 @@ const Payment = () => {
                 />
             </div>
             <div className="right-payment">
-                <span className="address">Адрес</span>
-                <Input
-                    holder=""
-                />
-                <span className="email">E-mail</span>
-                <Input
-                    holder=""
-                />
+                <div className="address-container">
+                    <span className="address">Адрес</span>
+                    <input className="address-email-input" type="text"/>
+                </div>
+               
+                <div className="email-container">
+                    <span className="email">E-mail</span>
+                    <input className="address-email-input" type="text" />
+                </div>
+                
             </div>
         </form>
     )
