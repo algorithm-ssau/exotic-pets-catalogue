@@ -1,4 +1,4 @@
-.card {
+.card-form {
     width: 445px;
     height: 422px;
 
@@ -7,7 +7,7 @@
     background-color: var(--white);
 
     display: grid;
-    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     align-items: center;
     justify-content: center;
     
@@ -37,6 +37,7 @@
 
 .date-and-cvc-container {
     display: flex;
+    gap: 35px;
 }
 
 .number-name-input {
@@ -71,9 +72,5 @@
     padding: 10px;
 
     margin-top: 5px;
-}
-
-.cvc {
-    margin-left: 35px;
 }
 

@@ -9,10 +9,8 @@ const PageCart = () => {
         // <h1>Cart</h1>
         
         <div className="cartpage-container">
-             <div className="payment-container">
                     <Payment
                     />
-             </div>
         </div>
        
     );

@@ -4,9 +4,9 @@ import Button from '../Button';
 
 import './index.css';
 
-const Card = () => {
+const CardForm = () => {
     return (
-        <div className="card">
+        <div className="card-form">
 
             <div className="card-number-container">
                 <span className="card-number">Номер карты</span>
@@ -32,13 +32,14 @@ const Card = () => {
        
             <div className="order-button">
                 <Button
-                    className={"catalogue-button"}
-                     isLink={true}
+                    className="cart-button"
+                    isLink={true}
                     act={"Заказать"}
+                    type="submit"
                  />
             </div>
        </div>
     )
 }
 
-export default Card;
+export default CardForm;

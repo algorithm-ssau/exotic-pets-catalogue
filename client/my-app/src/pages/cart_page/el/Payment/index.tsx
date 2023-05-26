@@ -1,16 +1,17 @@
 import * as React from 'react';
 
-import Card from '../Card';
+import CardForm from '../CardForm';
 
 import './index.css';
 
 const Payment = () => {
     return (
-        <form className="payment" action="">
+        <form className="payment-container" action="">
             <div className="left-payment">
-                <Card
+                <CardForm
                 />
             </div>
+
             <div className="right-payment">
                 <div className="address-container">
                     <span className="address">Адрес</span>
@@ -23,17 +24,17 @@ const Payment = () => {
                 </div>
 
                 <div className="calculations-container">
-                    <div className="left">
+                    <div className="left-summary">
                         <span className="light-text">Количество</span>
                         <span className="light-text">Скидка</span>
                         <span className="light-text">Доставка</span>
                         <span className="heavy-text">Итого</span>
                     </div>
-                    <div className="right">
+                    <div className="right-summary">
                         <span className="light-text">1</span>
                         <span className="light-text">0%</span>
-                        <span className="light-text">2000</span>
-                        <span className="heavy-text">12000</span>
+                        <span className="light-text">2000 ₽</span>
+                        <span className="heavy-text">12000 ₽</span>
                     </div>
                 </div>
             </div>
