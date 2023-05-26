@@ -2,7 +2,7 @@ import React from 'react';
 
 const PageCart = () => {
     return (
-        <h1>Cart</h1>
+            <h1>cart</h1>
     );
 }
 
