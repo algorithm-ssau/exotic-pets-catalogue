@@ -1,0 +1,18 @@
+.cart-button {
+    padding: .625rem;
+    width: 385px;
+
+    color: var(--white);
+    font-size: 1.5rem;
+
+    background-color: var(--green);
+
+    border: none;
+    border-radius: var(--border-radius);
+
+    cursor: pointer;
+}
+
+.cart-button:hover {
+    background-color: var(--dark-green);
+}

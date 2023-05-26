@@ -1,0 +1,76 @@
+.card-form {
+    width: 445px;
+    height: 422px;
+
+    border-radius: var(--border-radius);
+
+    background-color: var(--white);
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 15px;
+}
+
+.card-number,
+.cardholder,
+.validaty-period,
+.cvc-span {
+    font-size: 1em;
+}
+
+.card-number-container,
+.cardholder-container,
+.date,
+.cvc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.number-name-input::placeholder,
+.date-cvc-input::placeholder {
+    color: var(--white);
+}
+
+.date-and-cvc-container {
+    display: flex;
+    gap: 35px;
+}
+
+.number-name-input {
+    border-radius: var(--border-radius);
+
+    width: 385px;
+    height: 50px;
+
+    background-color: #E0D0C1;
+
+    resize: none;
+    outline: none;
+    border: none;
+    
+    padding: 10px;
+
+    margin-top: 5px;
+}
+
+.date-cvc-input {
+    border-radius: var(--border-radius);
+
+    width: 175px;
+    height: 50px;
+
+    background-color: #E0D0C1;
+
+    resize: none;
+    outline: none;
+    border: none;
+    
+    padding: 10px;
+
+    margin-top: 5px;
+}
+

@@ -1,0 +1,98 @@
+.payment-container {
+    width: 1110px;
+    padding: 30px 95px;
+
+    border-radius: var(--border-radius);
+
+    background-color: var(--brown);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: space-around;
+    align-items: center;
+}
+
+.left-payment {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.address-container,
+.email-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.address,
+.email {
+    color: var(--white);
+    font-size: 1em;
+}
+
+.address-email-input {
+    border-radius: var(--border-radius);
+
+    width: 350px;
+    height: 50px;
+
+    background-color: var(--white);
+
+    resize: none;
+    outline: none;
+    border: none;
+    
+    padding: 10px;
+
+    margin-top: 5px;
+}
+
+.right-payment {
+    width: fit-content;
+
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    justify-self: end;
+}
+
+.left-summary,
+.right-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.left-summary {
+    justify-self: start;
+}
+
+.right-summary {
+    text-align: end;
+
+    justify-self: end;
+}
+
+.light-text {
+    color: var(--white);
+    font-size: 1.5em;
+}
+
+.heavy-text {
+    color: var(--white);
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-top: 14px;
+}
+
+.calculations-container {
+    width: 350px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
