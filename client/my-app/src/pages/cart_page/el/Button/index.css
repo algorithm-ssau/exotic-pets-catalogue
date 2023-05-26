@@ -6,7 +6,8 @@
     font-weight: 700;
 
     width: 385px;
-
+    padding: 10px;
+    
     background-color: var(--green);
 
     border: none;

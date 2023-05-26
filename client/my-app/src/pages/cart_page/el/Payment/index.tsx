@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import Card from '../Card';
-import Input from '../Input';
 
 import './index.css';
 
@@ -22,7 +21,21 @@ const Payment = () => {
                     <span className="email">E-mail</span>
                     <input className="address-email-input" type="text" />
                 </div>
-                
+
+                <div className="calculations-container">
+                    <div className="left">
+                        <span className="light-text">Количество</span>
+                        <span className="light-text">Скидка</span>
+                        <span className="light-text">Доставка</span>
+                        <span className="heavy-text">Итого</span>
+                    </div>
+                    <div className="right">
+                        <span className="light-text">1</span>
+                        <span className="light-text">0%</span>
+                        <span className="light-text">2000</span>
+                        <span className="heavy-text">12000</span>
+                    </div>
+                </div>
             </div>
         </form>
     )

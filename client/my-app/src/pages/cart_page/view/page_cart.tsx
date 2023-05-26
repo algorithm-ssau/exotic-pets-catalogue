@@ -10,9 +10,9 @@ const PageCart = () => {
         
         <div className="cartpage-container">
              <div className="payment-container">
-                 <Payment
-                 />
-        </div>
+                    <Payment
+                    />
+             </div>
         </div>
        
     );
