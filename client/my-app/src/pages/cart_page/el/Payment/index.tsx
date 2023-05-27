@@ -1,10 +1,12 @@
 import * as React from 'react';
 
 import CardForm from '../CardForm';
+import IPayment from '../../../../common/interfaces/IPayment';
 
 import './index.css';
 
-const Payment = () => {
+
+const Payment = ({countProducts, discount, deliveryPrice, summaryPrice}: IPayment) => {
     return (
         <form className="payment-container" action="">
             <div className="left-payment">
@@ -31,10 +33,10 @@ const Payment = () => {
                         <span className="heavy-text">Итого</span>
                     </div>
                     <div className="right-summary">
-                        <span className="light-text">1</span>
-                        <span className="light-text">0%</span>
-                        <span className="light-text">2000 ₽</span>
-                        <span className="heavy-text">12000 ₽</span>
+                        <span className="light-text">{countProducts}</span>
+                        <span className="light-text">{discount}%</span>
+                        <span className="light-text">{deliveryPrice} ₽</span>
+                        <span className="heavy-text">{summaryPrice} ₽</span>
                     </div>
                 </div>
             </div>
