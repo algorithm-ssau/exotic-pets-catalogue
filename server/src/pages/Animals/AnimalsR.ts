@@ -29,6 +29,7 @@ export namespace AnimalsR {
                 name?: string;
                 price?: number;
                 image?: string;
+                description?: string;
             }
 
             aSpecies?: {
@@ -50,6 +51,7 @@ export namespace AnimalsR {
             name?: string;
             price?: number;
             image?: string;
+            description?: string;
         }
     }
 
@@ -62,6 +64,7 @@ export namespace AnimalsR {
                 name?: string;
                 price?: number;
                 image?: string;
+                description?: string;
             }
 
             aSpecies?: {
@@ -83,6 +86,7 @@ export namespace AnimalsR {
             name?: string;
             price?: number;
             image?: string;
+            description?: string;
         }
     }
 }
