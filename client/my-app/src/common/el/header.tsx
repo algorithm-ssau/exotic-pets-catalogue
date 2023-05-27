@@ -3,6 +3,9 @@ import "../styles/header.css"
 import { ReactComponent as CartSvg } from "../../assets/cart-icon.svg";
 import { ReactComponent as HeartFilledSvg } from "../../assets/heart-icon-filled.svg";
 import { NavLink } from 'react-router-dom';
+import { observer } from 'mobx-react';
+
+import productStore from '../../store/productStore';
 
 const Header = () => {
     return (
@@ -39,6 +42,16 @@ const Header = () => {
                         <NavLink to="/cart">
                             <CartSvg />
                         </NavLink>
+
+                        {
+                            productStore.cartProducts.length === 0
+                            ? <div className="hidden product-counter">
+                                {productStore.cartProducts.length}
+                            </div>
+                            : <div className="product-counter">
+                                {productStore.cartProducts.length}
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
@@ -46,4 +59,4 @@ const Header = () => {
     );
 }
 
-export default Header;
+export default observer(Header);
