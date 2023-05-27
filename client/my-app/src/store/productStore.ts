@@ -93,7 +93,7 @@ class productStore {
     let summaryPrice = 0;
     this.cartProducts.forEach(product => summaryPrice += product.price);
     
-    return summaryPrice;
+    return (summaryPrice + 2000); // it is not good, change it in the future
   }
 }
 
