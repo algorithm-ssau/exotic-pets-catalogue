@@ -33,6 +33,7 @@ const Products = () => {
                         return (
                             <li key={animal.id}>
                                 <ProductCard
+                                    description={animal.description}
                                     id={animal.id}
                                     image={animal.image}
                                     name={animal.name}

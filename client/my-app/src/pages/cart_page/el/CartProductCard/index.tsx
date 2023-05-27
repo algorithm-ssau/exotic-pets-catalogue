@@ -20,6 +20,11 @@ const CartProductCard = ({ id, image, name, price, description }: IProduct) => {
         productStore.removeFromCart(productToRemove);
     }
 
+    function fixDescription() {
+        let descriptionArr = description.split(".");
+        return descriptionArr[0] + ". " + descriptionArr[1];
+    }
+
     return (
         <div className='cart-product-card-container'>
             <div className='cart-product-card'>
@@ -36,7 +41,7 @@ const CartProductCard = ({ id, image, name, price, description }: IProduct) => {
         
         
                         <div className="cart-product-description">
-                            {description}
+                            {fixDescription()}
                         </div>
                     </div>
         
