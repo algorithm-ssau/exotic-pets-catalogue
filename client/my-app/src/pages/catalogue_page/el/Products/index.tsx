@@ -26,18 +26,23 @@ const Products = () => {
 
     return (
         <div className="catalogue-products-container">
-            {productStore.products.map(animal => {
-                    return (
-                        <li key={animal.id}>
-                            <ProductCard
-                                id={animal.id}
-                                image={animal.image}
-                                name={animal.name}
-                                price={animal.price}
-                            />
-                        </li>
-                    )
-                })}
+            {
+                productStore.products.length === 0 
+                ? <span>По вашему запросу ничего не найдено</span>
+                : productStore.products.map(animal => {
+                        return (
+                            <li key={animal.id}>
+                                <ProductCard
+                                    description={animal.description}
+                                    id={animal.id}
+                                    image={animal.image}
+                                    name={animal.name}
+                                    price={animal.price}
+                                />
+                            </li>
+                        )
+                    })
+            }
         </div>
     );
 }

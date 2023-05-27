@@ -1,16 +1,36 @@
 import React from 'react';
 import { ReactComponent as CrossSvg } from "../../../../assets/cross-icon.svg";
-import ICart from '../../../../common/interfaces/ICart';
+import { observer } from 'mobx-react';
+import IProduct from '../../../../common/interfaces/IProduct';
+import productStore from '../../../../store/productStore';
 
 import "./index.css";
 
-const CartProductCard = ({ id, image, name, price, description }: ICart) => {
+const CartProductCard = ({ id, image, name, price, description }: IProduct) => {
+    function handleRemoveFromCart() {
+        const productToRemove: IProduct = {
+            id: id,
+            name: name,
+            image: image,
+            price: price,
+            description: description,
+            isInCart: false
+        };
+
+        productStore.removeFromCart(productToRemove);
+    }
+
+    function fixDescription() {
+        let descriptionArr = description.slice(0, 199);
+        return descriptionArr + "..."
+    }
+
     return (
         <div className='cart-product-card-container'>
             <div className='cart-product-card'>
                 
                 <div className="cart-product-card-image">
-                    <img src={require("../../../../assets/image_30.png")} alt='product_image' />
+                    <img src={image} alt='product_image' width={255} height={255} />
                 </div>
 
                 <div className="cart-product-card-info">
@@ -21,12 +41,15 @@ const CartProductCard = ({ id, image, name, price, description }: ICart) => {
         
         
                         <div className="cart-product-description">
-                            {description}
+                            {fixDescription()}
                         </div>
                     </div>
         
                     <div className='cart-product-card-info-right'>
-                        <button className="cart-product-card-remove-button">
+                        <button 
+                            className="cart-product-card-remove-button"
+                            onClick={handleRemoveFromCart}
+                        >
                             <CrossSvg
                                 className="cross-icon"
                                 width={30}
@@ -44,4 +67,4 @@ const CartProductCard = ({ id, image, name, price, description }: ICart) => {
     );
 }
 
-export default CartProductCard;
+export default observer(CartProductCard);
