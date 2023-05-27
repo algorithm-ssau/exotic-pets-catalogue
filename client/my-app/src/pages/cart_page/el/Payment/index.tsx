@@ -4,9 +4,10 @@ import CardForm from '../CardForm';
 import IPayment from '../../../../common/interfaces/IPayment';
 
 import './index.css';
+import productStore from '../../../../store/productStore';
 
 
-const Payment = ({countProducts, discount, deliveryPrice, summaryPrice}: IPayment) => {
+const Payment = ({countProducts, discount, deliveryPrice = 0, summaryPrice = 0}: IPayment) => {
     return (
         <form className="payment-container" action="">
             <div className="left-payment">
@@ -33,10 +34,10 @@ const Payment = ({countProducts, discount, deliveryPrice, summaryPrice}: IPaymen
                         <span className="heavy-text">Итого</span>
                     </div>
                     <div className="right-summary">
-                        <span className="light-text">{countProducts}</span>
+                        <span className="light-text">{productStore.cartProducts.length}</span>
                         <span className="light-text">{discount}%</span>
                         <span className="light-text">{deliveryPrice} ₽</span>
-                        <span className="heavy-text">{summaryPrice} ₽</span>
+                        <span className="heavy-text">{productStore.setSummaryPrice()} ₽</span>
                     </div>
                 </div>
             </div>
