@@ -53,3 +53,12 @@
 .product-card-button:hover {
     background-color: var(--dark-green);
 }
+
+.product-in-cart {
+    background-color: var(--white);
+    cursor: default;
+}
+
+.product-in-cart:hover {
+    background-color: var(--white);
+}

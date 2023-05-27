@@ -3,12 +3,13 @@ import { useState } from 'react';
 import { ReactComponent as HeartSvg } from "../../../../assets/heart-icon.svg";
 import { ReactComponent as HeartFilledSvg } from "../../../../assets/heart-icon-filled.svg";
 import { ReactComponent as CartSvg } from "../../../../assets/cart-icon.svg";
+import { ReactComponent as CheckmarkSvg } from "../../../../assets/checkmark-icon.svg"
 import IProduct from '../../../../common/interfaces/IProduct';
 
 import "./index.css";
 import productStore from '../../../../store/productStore';
 
-const ProductCard = ({id, image, name, price, description, isFavourite = false, isInCart = false}: IProduct) => {
+const ProductCard = ({ id, image, name, price, description, isFavourite = false, isInCart = false }: IProduct) => {
     const [isFav, setIsFav] = useState<boolean>(isFavourite);
 
     const [isCart, setIsCart] = useState<boolean>(isInCart);
@@ -27,15 +28,18 @@ const ProductCard = ({id, image, name, price, description, isFavourite = false, 
             name: name,
             image: image,
             price: price,
-            description: description
+            description: description,
+            isInCart: true
         };
+
+        setIsCart(true);
 
         productStore.addToCart(productToAdd);
     }
 
     return (
-        <div className="product-card-container" style={{backgroundImage: `url(${image}`}} key={id}>
-            <div 
+        <div className="product-card-container" style={{ backgroundImage: `url(${image}` }} key={id}>
+            <div
                 className="product-card-favourite"
                 onClick={handleSetIsFav}
             >
@@ -52,15 +56,27 @@ const ProductCard = ({id, image, name, price, description, isFavourite = false, 
                         {price} ₽
                     </div>
 
-                    <button 
-                        className="product-card-button"
-                        onClick={handleAddToCart}
-                    >
-                        <CartSvg 
-                            width={15} 
-                            height={15}
-                        />
-                    </button>
+                    {
+                        productStore.cartProducts.some(item => item.id === id)
+                            ? <button
+                                className="product-card-button product-in-cart"
+                                onClick={handleAddToCart}
+                                disabled={true}
+                            >
+                                <CheckmarkSvg
+                                />
+                            </button>
+
+                            : <button
+                                className="product-card-button"
+                                onClick={handleAddToCart}
+                            >
+                                <CartSvg
+                                    width={15}
+                                    height={15}
+                                />
+                            </button>
+                    }
                 </div>
             </div>
         </div>

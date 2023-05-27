@@ -13,7 +13,8 @@ const CartProductCard = ({ id, image, name, price, description }: IProduct) => {
             name: name,
             image: image,
             price: price,
-            description: description
+            description: description,
+            isInCart: false
         };
 
         productStore.removeFromCart(productToRemove);
