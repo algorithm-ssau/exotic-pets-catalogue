@@ -6,8 +6,9 @@ import { ReactComponent as CartSvg } from "../../../../assets/cart-icon.svg";
 import IProduct from '../../../../common/interfaces/IProduct';
 
 import "./index.css";
+import productStore from '../../../../store/productStore';
 
-const ProductCard = ({id, image, name, price, isFavourite = false, isInCart = false}: IProduct) => {
+const ProductCard = ({id, image, name, price, description, isFavourite = false, isInCart = false}: IProduct) => {
     const [isFav, setIsFav] = useState<boolean>(isFavourite);
 
     const [isCart, setIsCart] = useState<boolean>(isInCart);
@@ -20,12 +21,16 @@ const ProductCard = ({id, image, name, price, isFavourite = false, isInCart = fa
         }
     }
 
-    function handleSetIsCart() {
-        if (isCart === false) {
-            setIsCart(true);
-        } else {
-            setIsCart(false);
-        }
+    function handleAddToCart() {
+        const productToAdd: IProduct = {
+            id: id,
+            name: name,
+            image: image,
+            price: price,
+            description: description
+        };
+
+        productStore.addToCart(productToAdd);
     }
 
     return (
@@ -49,7 +54,7 @@ const ProductCard = ({id, image, name, price, isFavourite = false, isInCart = fa
 
                     <button 
                         className="product-card-button"
-                        onClick={handleSetIsCart}
+                        onClick={handleAddToCart}
                     >
                         <CartSvg 
                             width={15} 
