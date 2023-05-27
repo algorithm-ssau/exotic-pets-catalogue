@@ -21,8 +21,8 @@ const CartProductCard = ({ id, image, name, price, description }: IProduct) => {
     }
 
     function fixDescription() {
-        let descriptionArr = description.split(".");
-        return descriptionArr[0] + ". " + descriptionArr[1];
+        let descriptionArr = description.slice(0, 199);
+        return descriptionArr + "..."
     }
 
     return (
