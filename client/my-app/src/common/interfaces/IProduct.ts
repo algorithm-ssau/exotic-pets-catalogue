@@ -3,6 +3,7 @@ export default interface IProduct {
     image: string;
     name: string;
     price: number;
+    description?: string;
     isFavourite?: boolean;
     isInCart?: boolean;
 }
