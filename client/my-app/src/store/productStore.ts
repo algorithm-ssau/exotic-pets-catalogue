@@ -14,6 +14,8 @@ class productStore {
 
   products: IProduct[] = [];
 
+  cartProducts: IProduct[] = [];
+
   constructor() {
     makeAutoObservable(this);
   }
@@ -66,6 +68,32 @@ class productStore {
   setSpecies(value: number) {
     this.selectedSpecies = value;
     this.fetchProducts();
+  }
+
+  // -------------------------------------
+  // Adding and removing from cart methods
+  // -------------------------------------
+
+  addToCart = (product: IProduct) => {
+    this.cartProducts.push(product);
+    localStorage.setItem("cart", JSON.stringify(this.cartProducts));
+  }
+
+  removeFromCart = (product: IProduct) => {
+    this.cartProducts = this.cartProducts.filter(cartProduct => cartProduct.id !== product.id);
+    localStorage.setItem("cart", JSON.stringify(this.cartProducts));
+  }
+
+  loadCart = () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    this.cartProducts = cart;
+  }
+
+  setSummaryPrice() {
+    let summaryPrice = 0;
+    this.cartProducts.forEach(product => summaryPrice += product.price);
+    
+    return summaryPrice;
   }
 }
 
