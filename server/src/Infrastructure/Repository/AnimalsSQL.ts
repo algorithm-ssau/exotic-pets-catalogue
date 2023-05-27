@@ -37,7 +37,7 @@ export class AnimalsSQL {
                     .leftJoin({ anima: AnimalsE.NAME }, 'anima.species_id', 'spc.id')
                     .leftJoin({ img: ImageE.NAME }, 'img.id', 'anima.images_id')
                     .where('king.id', nKingdom)
-                    .select('anima.id', 'anima.name', 'anima.price', 'img.image'),
+                    .select('anima.id', 'anima.name', 'anima.price', 'img.image', 'anima.description'),
 
                 aSpecies: await this.db<SpeciesI>({ spc: SpeciesE.NAME })
                     .where('spc.kingdoms_id', nKingdom)
@@ -59,7 +59,7 @@ export class AnimalsSQL {
                 .leftJoin({ anima: AnimalsE.NAME }, 'anima.species_id', 'spc.id')
                 .leftJoin({ img: ImageE.NAME }, 'img.id', 'anima.images_id')
                 .where('spc.id', nSpecies)
-                .select('anima.id', 'anima.name', 'anima.price', 'img.image');
+                .select('anima.id', 'anima.name', 'anima.price', 'img.image', 'anima.description');
 
         } catch (e) {
             console.log('getAnimalsOfSpecifiedSpecies sql ERROR', e);
@@ -76,7 +76,7 @@ export class AnimalsSQL {
 
                 aAnimals: await this.db<catalogueCardI>({ anima: AnimalsE.NAME })
                     .leftJoin({ img: ImageE.NAME }, 'img.id', 'anima.images_id')
-                    .select('anima.id', 'anima.name', 'anima.price', 'img.image'),
+                    .select('anima.id', 'anima.name', 'anima.price', 'img.image', 'anima.description'),
 
                 aSpecies: await this.db<SpeciesI>({ spc: SpeciesE.NAME })
                     .select('spc.id', 'spc.name')
@@ -96,7 +96,7 @@ export class AnimalsSQL {
             vAnimal = await this.db<catalogueCardI>({ anima: AnimalsE.NAME })
                 .leftJoin({ img: ImageE.NAME }, 'img.id', 'anima.images_id')
                 .where('anima.name'.toLowerCase(), 'like', `%${sTerm}%`.toLowerCase())
-                .select('anima.id', 'anima.name', 'anima.price', 'img.image');
+                .select('anima.id', 'anima.name', 'anima.price', 'img.image', 'anima.description');
 
         } catch (e) {
             console.log('getAnimalsOfSpecifiedSpecies sql ERROR', e);
