@@ -78,6 +78,8 @@ export namespace AnimalsR {
         export const route = '/animals/search';
 
         export interface RequestI {
+            kingdomid: number
+            speciesid: number
             term: string;
         }
 
