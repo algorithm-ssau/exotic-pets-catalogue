@@ -22,8 +22,8 @@ export async function getAllAnimals(param?: string): Promise<IKingdom> {
     return response.json();
 }
 
-export async function getSearchAnimals(term: string): Promise<IProduct[]> {
-    const response = await fSend("/animals/search", {term});
+export async function getSearchAnimals(kingdomid: number, speciesid: number, term: string): Promise<IProduct[]> {
+    const response = await fSend("/animals/search", {kingdomid, speciesid, term});
 
     return response.data;
 }
