@@ -9,6 +9,7 @@ import Modal from '../Modal';
 
 import "./index.css";
 import productStore from '../../../../store/productStore';
+import { observer } from 'mobx-react';
 
 const ProductCard = ({ id, image, name, price, description, isFavourite = false, isInCart = false }: IProduct) => {
     const [isFav, setIsFav] = useState<boolean>(isFavourite);
@@ -24,35 +25,47 @@ const ProductCard = ({ id, image, name, price, description, isFavourite = false,
     }
 
     function handleAddToCart() {
-        const productToAdd: IProduct = {
-            id: id,
-            name: name,
-            image: image,
-            price: price,
-            description: description,
-            isInCart: true
-        };
-
-        setIsCart(true);
-
-        productStore.addToCart(productToAdd);
+        if (productStore.cartProducts.length < 5) {
+            const productToAdd: IProduct = {
+                id: id,
+                name: name,
+                image: image,
+                price: price,
+                description: description,
+                isInCart: true
+            };
+    
+            setIsCart(true);
+    
+            productStore.addToCart(productToAdd);
+        } else {
+            alert("Нельзя добавить в корзину более 5 животных")
+        }
     }
 
     // activates by clicking on the image of the card
     function handleClickCard(event) {
         if (event.target.className === "product-card-container") {
-           const modal: any = document.querySelector(`#modal-${id}`); // getting exact id to show animal with this id
-           modal.showModal();
+            const modal: any = document.querySelector(`#modal-${id}`); // getting exact id to show animal with this id
+            modal.showModal();
         }
     }
 
     return (
-        <div 
-            className="product-card-container" 
-            style={{ backgroundImage: `url(${image}` }} 
+        <div
+            className="product-card-container"
+            style={{ backgroundImage: `url(${image}` }}
             key={id}
             onClick={(e) => handleClickCard(e)}
         >
+            <Modal
+                id={id}
+                image={image}
+                name={name}
+                price={price}
+                description={description}
+            />
+
             <div
                 className="product-card-favourite"
                 onClick={handleSetIsFav}
@@ -93,16 +106,8 @@ const ProductCard = ({ id, image, name, price, description, isFavourite = false,
                     }
                 </div>
             </div>
-
-            <Modal 
-                id={id}
-                image={image}
-                name={name}
-                price={price}
-                description={description}
-            />
         </div>
     );
 }
 
-export default ProductCard;
+export default observer(ProductCard);
