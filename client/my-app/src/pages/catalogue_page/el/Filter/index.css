@@ -1,3 +1,7 @@
+.filter-container {
+    z-index: var(--ui-index-2);
+}
+
 .catalogue-filter-container {
     width: 1110px;
     height: 60px;
