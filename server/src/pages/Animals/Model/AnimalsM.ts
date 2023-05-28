@@ -33,7 +33,7 @@ export class AnimalsM {
     }
 
     public async searchAnimals(data: R.getAnimalsThroughSearch.RequestI): Promise<R.getAnimalsThroughSearch.ResponseI> {
-        const vAnimal = await this.AnimalsSQL.searchAnimals(data.term);
+        const vAnimal = await this.AnimalsSQL.searchAnimals(data.term, data.kingdomid, data.speciesid);
 
         return vAnimal
     }

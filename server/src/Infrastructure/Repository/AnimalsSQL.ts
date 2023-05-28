@@ -89,14 +89,32 @@ export class AnimalsSQL {
         return vAnimalPlusSpec;
     }
 
-    public async searchAnimals(sTerm: string): Promise<catalogueCardI> {
+    public async searchAnimals(sTerm: string, nKingdom: number, nSpecies: number): Promise<catalogueCardI> {
         let vAnimal: catalogueCardI = {};
 
         try {
-            vAnimal = await this.db<catalogueCardI>({ anima: AnimalsE.NAME })
+            if(nKingdom == 0){
+                vAnimal = await this.db<catalogueCardI>({ anima: AnimalsE.NAME })
                 .leftJoin({ img: ImageE.NAME }, 'img.id', 'anima.images_id')
                 .where('anima.name'.toLowerCase(), 'like', `%${sTerm}%`.toLowerCase())
                 .select('anima.id', 'anima.name', 'anima.price', 'img.image', 'anima.description');
+            }
+            else if(nSpecies == 0){
+                vAnimal = await this.db<catalogueCardI>({ anima: AnimalsE.NAME })
+                .leftJoin({ img: ImageE.NAME }, 'img.id', 'anima.images_id')
+                .leftJoin({ spec: SpeciesE.NAME }, 'spec.id', 'anima.species_id')
+                .leftJoin({ king: KingdomsE.NAME }, 'king.id', 'spec.kingdoms_id')
+                .where('anima.name'.toLowerCase(), 'like', `%${sTerm}%`.toLowerCase())
+                .andWhere('king.id', nKingdom)
+                .select('anima.id', 'anima.name', 'anima.price', 'img.image', 'anima.description');
+            }
+            else{
+                vAnimal = await this.db<catalogueCardI>({ anima: AnimalsE.NAME })
+                .leftJoin({ img: ImageE.NAME }, 'img.id', 'anima.images_id')
+                .where('anima.name'.toLowerCase(), 'like', `%${sTerm}%`.toLowerCase())
+                .andWhere('anima.species_id', nSpecies)
+                .select('anima.id', 'anima.name', 'anima.price', 'img.image', 'anima.description');
+            }
 
         } catch (e) {
             console.log('getAnimalsOfSpecifiedSpecies sql ERROR', e);
