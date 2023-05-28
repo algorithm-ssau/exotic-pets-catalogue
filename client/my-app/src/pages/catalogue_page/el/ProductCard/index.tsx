@@ -5,6 +5,7 @@ import { ReactComponent as HeartFilledSvg } from "../../../../assets/heart-icon-
 import { ReactComponent as CartSvg } from "../../../../assets/cart-icon.svg";
 import { ReactComponent as CheckmarkSvg } from "../../../../assets/checkmark-icon.svg"
 import IProduct from '../../../../common/interfaces/IProduct';
+import Modal from '../Modal';
 
 import "./index.css";
 import productStore from '../../../../store/productStore';
@@ -37,8 +38,21 @@ const ProductCard = ({ id, image, name, price, description, isFavourite = false,
         productStore.addToCart(productToAdd);
     }
 
+    // activates by clicking on the image of the card
+    function handleClickCard(event) {
+        if (event.target.className === "product-card-container") {
+           const modal: any = document.querySelector(`#modal-${id}`); // getting exact id to show animal with this id
+           modal.showModal();
+        }
+    }
+
     return (
-        <div className="product-card-container" style={{ backgroundImage: `url(${image}` }} key={id}>
+        <div 
+            className="product-card-container" 
+            style={{ backgroundImage: `url(${image}` }} 
+            key={id}
+            onClick={(e) => handleClickCard(e)}
+        >
             <div
                 className="product-card-favourite"
                 onClick={handleSetIsFav}
@@ -79,6 +93,14 @@ const ProductCard = ({ id, image, name, price, description, isFavourite = false,
                     }
                 </div>
             </div>
+
+            <Modal 
+                id={id}
+                image={image}
+                name={name}
+                price={price}
+                description={description}
+            />
         </div>
     );
 }
