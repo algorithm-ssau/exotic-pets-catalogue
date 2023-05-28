@@ -21,7 +21,7 @@ class productStore {
   }
 
   async searchProducts() {
-    const products = await getSearchAnimals(this.searchingProduct);
+    const products = await getSearchAnimals(this.selectedKingdom, this.selectedSpecies, this.searchingProduct);
 
     runInAction(() => {
       this.products = products;
