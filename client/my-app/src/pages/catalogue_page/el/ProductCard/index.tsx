@@ -16,11 +16,20 @@ const ProductCard = ({ id, image, name, price, description, isFavourite = false,
 
     const [isCart, setIsCart] = useState<boolean>(isInCart);
 
-    function handleSetIsFav() {
-        if (isFav === false) {
-            setIsFav(true);
+    function handleAddToFav() {
+        const productToAdd: IProduct = {
+            id: id,
+            name: name,
+            image: image,
+            price: price,
+            description: description,
+            isInCart: true
+        };
+
+        if (productStore.favProducts.some(item => item.id === id) === false) {
+            productStore.addToFav(productToAdd);
         } else {
-            setIsFav(false);
+            productStore.removeFromFav(productToAdd);
         }
     }
 
@@ -34,9 +43,9 @@ const ProductCard = ({ id, image, name, price, description, isFavourite = false,
                 description: description,
                 isInCart: true
             };
-    
+
             setIsCart(true);
-    
+
             productStore.addToCart(productToAdd);
         } else {
             alert("Нельзя добавить в корзину более 5 животных")
@@ -66,12 +75,22 @@ const ProductCard = ({ id, image, name, price, description, isFavourite = false,
                 description={description}
             />
 
-            <div
-                className="product-card-favourite"
-                onClick={handleSetIsFav}
-            >
-                {isFav ? <HeartFilledSvg /> : <HeartSvg />}
-            </div>
+            {
+                productStore.favProducts.some(item => item.id === id)
+                    ? <div
+                        className="product-card-favourite"
+                        onClick={handleAddToFav}
+                    >
+                        <HeartFilledSvg className="heart-icon" />
+                    </div>
+
+                    : <div
+                        className="product-card-favourite"
+                        onClick={handleAddToFav}
+                    >
+                        <HeartSvg className="heart-icon"/>
+                    </div>
+            }
 
             <div className="product-card-info">
                 <div className="product-card-name">

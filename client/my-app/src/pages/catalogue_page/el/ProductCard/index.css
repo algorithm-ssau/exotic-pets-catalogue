@@ -68,3 +68,11 @@
 .product-in-cart:hover {
     background-color: var(--white);
 }
+
+.heart-icon g {
+    fill: var(--orange);
+}
+
+.heart-icon path {
+    fill: var(--orange);
+}
