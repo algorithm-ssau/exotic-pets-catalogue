@@ -1,0 +1,23 @@
+.page-favorites-container {
+    width: 1110px;
+    margin: 0 auto;
+}
+
+.favorites-header {
+    margin-top: 5rem;
+
+    font-size: 3em;
+}
+
+.favorite-products {
+    width: 1110px;
+    margin: 0 auto;
+    margin-top: 3.125rem;
+    margin-bottom: 5rem; /* Better not use margin bottoms */
+    
+    list-style-type: none;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
