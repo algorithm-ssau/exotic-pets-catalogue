@@ -16,6 +16,8 @@ class productStore {
 
   cartProducts: IProduct[] = [];
 
+  favProducts: IProduct[] = [];
+
   constructor() {
     makeAutoObservable(this);
   }
@@ -92,8 +94,22 @@ class productStore {
   setSummaryPrice() {
     let summaryPrice = 0;
     this.cartProducts.forEach(product => summaryPrice += product.price);
-    
+
     return (summaryPrice + 2000); // it is not good, change it in the future
+  }
+
+  // -------------------------------------
+  // Adding and removing from favorites methods
+  // -------------------------------------
+
+  addToFav = (product: IProduct) => {
+    this.favProducts.push(product);
+    localStorage.setItem("favorites", JSON.stringify(this.favProducts));
+  }
+
+  removeFromFav = (product: IProduct) => {
+    this.favProducts = this.favProducts.filter(favProduct => favProduct.id !== product.id);
+    localStorage.setItem("favorites", JSON.stringify(this.favProducts));
   }
 }
 
