@@ -2,7 +2,9 @@
 
 *Дизайн сайта можно посмотреть [здесь](https://www.figma.com/file/ihk2kBOj9E9aDDkPCWwMn5/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD?type=design&node-id=0-1&t=41L7Hn8rP4ZdgxG0-0)*
 
-Сайт работает по ссылке: https://exotic-pets-catalogue.vercel.app/
+*Сайт работает по адресу*: [45.12.239.204](http://45.12.239.204:3000/)
+
+Ссылка на случай, если не работает первая (нужно запускать сервер на `localhost:5000`) https://exotic-pets-catalogue.vercel.app/
 
 ## Используемые технологии
 - Языки программирования:
