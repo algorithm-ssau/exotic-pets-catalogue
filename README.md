@@ -2,6 +2,8 @@
 
 *Дизайн сайта можно посмотреть [здесь](https://www.figma.com/file/ihk2kBOj9E9aDDkPCWwMn5/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD?type=design&node-id=0-1&t=41L7Hn8rP4ZdgxG0-0)*
 
+Сайт работает по ссылке: https://exotic-pets-catalogue.vercel.app/
+
 ## Используемые технологии
 - Языки программирования:
     - TypeScript
