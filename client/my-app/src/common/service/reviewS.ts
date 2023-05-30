@@ -1,4 +1,5 @@
 import IReview from "../interfaces/IReview";
+import config from "../../config.json";
 
 interface IRequest {
     name: string,
@@ -6,7 +7,7 @@ interface IRequest {
     img_id: number
 }
 
-const IP = 'localhost';
+const IP = config.IP;
 
 // function that generates random int between two values
 export function randomInteger(min: number, max: number) {

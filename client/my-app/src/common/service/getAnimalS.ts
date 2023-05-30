@@ -1,8 +1,9 @@
 import IKingdom from "../interfaces/IKingdom";
 import IProduct from "../interfaces/IProduct";
 import { fSend } from "./fetchS";
+import config from "../../config.json"
 
-const IP = 'localhost';
+const IP = config.IP;
 
 export async function getSpeciesAnimals(species?: number): Promise<IProduct[]> {
     const response = await fSend('/animals/get-species', {species});
